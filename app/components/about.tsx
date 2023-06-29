@@ -15,11 +15,11 @@ export default function About() {
         , programmer and graphic artist based in Munich, Germany. I graduated
         with honours in Industrial Design at{" "}
         <Link href="https://www.qut.edu.au/" target="_blank">
-          QUT
+          Queensland University of Technology 🡕
         </Link>{" "}
         with a strong interest in solving users’ problems with design thinking.
-        I am currently Interning at <Link href="#">Idealworks</Link>, a{" "}
-        <Link href="#">BMW Group</Link> company, applying human-centred design
+        I am currently Interning at <Link href="#">Idealworks 🡕</Link>, a{" "}
+        <Link href="#">BMW Group 🡕</Link> company, applying human-centred design
         techniques to support teams internally with web-based solutions to
         improve customer satisfaction.
       </p>

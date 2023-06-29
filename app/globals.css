@@ -33,7 +33,7 @@ body {
 
 
 a {
-  @apply text-blue-500 transition duration-150 ease-in-out;
+  @apply text-blue-600 transition duration-150 ease-in-out;
 }
 
 a:hover {
