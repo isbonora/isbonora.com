@@ -41,5 +41,5 @@ a:hover {
 }
 
 a.button {
-  @apply px-6 border font-normal rounded-md py-1 text-slate-800 hover:bg-slate-50 hover:text-slate-800 text-sm;
+  @apply lg:w-auto w-full px-6 border font-normal rounded-md py-2 lg:py-1 text-slate-800 hover:bg-slate-50 hover:text-slate-800 lg:bg-white bg-gray-50 text-lg lg:text-sm;
 }
