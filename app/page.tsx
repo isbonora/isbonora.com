@@ -1,8 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import modclave from "@/public/projects/modclaveHero.jpg";
+import dicart from "@/public/projects/dicart_hero.jpg";
+
+import iwhub from "@/public/projects/iwhub_hero.jpg";
+
 import Header from "@/components/header";
 import About from "@/components/about";
+import FeaturedProject from "@/components/featuredProject";
 
 export default function Home() {
   return (
@@ -11,6 +17,15 @@ export default function Home() {
         <Header />
 
         <About />
+
+        <section className="grid grid-cols-3 gap-6" id="featured">
+          <div className="col-span-3">
+            <h2 className="text-secondary">Featured</h2>
+          </div>
+          <FeaturedProject alt="modClave" src={modclave} page="#" width="3" />
+          <FeaturedProject alt="DiCart" src={dicart} page="#" width="1" />
+          <FeaturedProject alt="iwhub" src={iwhub} page="#" width="2" />
+        </section>
       </div>
     </main>
   );

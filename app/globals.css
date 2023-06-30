@@ -43,3 +43,23 @@ a:hover {
 a.button {
   @apply lg:w-auto w-full px-6 border font-normal rounded-md py-2 lg:py-1 text-slate-800 hover:bg-slate-50 hover:text-slate-800 lg:bg-white bg-gray-50 text-lg lg:text-sm;
 }
+
+
+.card-1-1 {
+  aspect-ratio: 1 / 1;
+  @apply lg:col-span-1 col-span-3 ;
+}
+
+.card-2-1 {
+  aspect-ratio: 2.1045 / 1;
+  @apply lg:col-span-2 col-span-3;
+}
+
+.card-3-1 {
+  aspect-ratio: 3 / 1;
+  @apply col-span-3 ;
+}
+
+.ratio-2-1 {
+  aspect-ratio: 2.075 / 1;
+}
