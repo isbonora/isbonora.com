@@ -22,9 +22,41 @@ export default function Home() {
           <div className="col-span-3">
             <h2 className="text-secondary">Featured</h2>
           </div>
-          <FeaturedProject alt="modClave" src={modclave} page="#" width="3" />
+          <FeaturedProject
+            alt="modClave"
+            src={modclave}
+            page="/projects/modclave-store-and-sterilise"
+            width="3"
+          />
           <FeaturedProject alt="DiCart" src={dicart} page="#" width="1" />
           <FeaturedProject alt="iwhub" src={iwhub} page="#" width="2" />
+        </section>
+
+        <section className="flex flex-col gap-6" id="more">
+          <h2 className="text-secondary">Projects</h2>
+          <Link href="#" className="flex text-center gap-3">
+            <h3 className="text-xl">Reflection Flag</h3>
+            <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>
+            <span className="font-light">Project with BMW Group</span>
+          </Link>
+
+          <Link href="#" className="flex text-center gap-3">
+            <h3 className="text-xl">Reflection Flag</h3>
+            <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>
+            <span className="font-light">Project with BMW Group</span>
+          </Link>
+
+          <Link href="#" className="flex text-center gap-3">
+            <h3 className="text-xl">Reflection Flag</h3>
+            <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>
+            <span className="font-light">Project with BMW Group</span>
+          </Link>
+
+          <Link href="#" className="flex text-center gap-3">
+            <h3 className="text-xl">Reflection Flag</h3>
+            <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>
+            <span className="font-light">Project with BMW Group</span>
+          </Link>
         </section>
       </div>
     </main>
