@@ -1,6 +1,6 @@
 function BuildTagList({ tags }: { tags: string[] }) {
   return (
-    <div className="flex flex-wrap gap-4 px-4 bg-slate-50 p-2 text-sm" id="tag-list">
+    <div className="flex flex-wrap gap-2 bg-slate-50 p-3 text-sm" id="tag-list">
       {tags.map((tag) => (
         <span key={tag} className="bg-slate-100 px-2 py-0.5 text-sm text-slate-500 rounded" id="tag">
           {tag}
