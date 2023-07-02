@@ -148,7 +148,7 @@ export default function Home() {
           description="Read the full thesis"
         />
         <ExternalLink
-          href="https://www.dropbox.com/s/hz9wytv6cwmpg6a/Final%20DDR%20Pages%20-%20Isaac%20Bonora%20-%2010-11-22.pdf?dl=0"
+          href="https://www.youtube.com/watch?v=l13PFV3bYVM"
           emoji="📺"
           description="Watch the introduction video"
         />
