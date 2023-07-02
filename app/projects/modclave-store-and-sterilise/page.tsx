@@ -12,7 +12,7 @@ import "@/styles/project.css";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4 py-12 lg:py-24">
+    <main className="flex min-h-screen flex-col items-center justify-between px-2 lg:px-4 py-12 lg:py-24">
       <div className="max-w-3xl w-full flex flex-col gap-16 lg:gap-24 leading-loose">
         <Header />
         <div className="flex flex-col gap-2">
@@ -81,7 +81,7 @@ export default function Home() {
         </div>
 
 
-        <div className='grid grid-cols-1 xl:grid-cols-2  gap-12 off-width items-center bg-slate-50 px-8 py-12'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 gap-12 off-width items-center bg-slate-50 px-4 lg:px-8 py-6 lg:py-12'>
           <div className="flex flex-col items-center">
             <Image
               alt="example of a room layout with a traditional autoclave"
