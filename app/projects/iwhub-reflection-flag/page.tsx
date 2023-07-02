@@ -1,10 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import modclave from "@/public/projects/modclaveHero.jpg";
-import module_closeup from "./module_closeup.jpg";
-import autoclave_requirements from "./autoclave_requirements.png";
-import instruments_stockphoto from "./ibrahim-boran-pV5arhEZHiA-unsplash.jpg";
+import iwhub from "@/public/projects/iwhub_hero.jpg";
 
 import Section from "@/components/project/Section";
 import InlineSection from "@/components/project/InlineSection";
@@ -15,32 +12,29 @@ export default function Home() {
   return (
     <div className="project-body">
       <Section>
-        <h1>modClave: Store & Sterilise</h1>
+        <h1>Reflection Flag</h1>
         <p className="lead">
-          An affordable and compact sterilisation device that addresses waste
-          mismanagement in healthcare by enabling clinics to reprocess
-          instruments, promoting sustainability and emphasizing the importance
-          of waste reduction during product development.
+          The Reflection Flag enhances interaction between warehouse workers and
+          autonomous mobile robots, improving understanding, control,
+          satisfaction, safety, efficiency, and offering a unique working
+          experience.
         </p>
 
         <ProjectInfo
           clientName="Queensland University of Technology"
-          datePeriod="2022"
-          bodyText="This project was completed over 12-months in the final year of my
-          Industrial Design degree as my disertation project. The projects
-          outcome incluced a reserach thesis and a developed product based on
-          the reserach completed in the first 6 months of the project."
+          datePeriod="2021"
+          bodyText="This project was completed as apart of a capstone unit at QUT. The project was completed in collaboration with Idealworks and the BMW Group."
         />
       </Section>
 
       <Image
-        alt="hero image of the modclave"
-        src={modclave}
+        alt="hero image of the iwhub by idealworks with the reflection flag attached"
+        src={iwhub}
         sizes="(min-width: 808px) 50vw, 100vw"
         className="off-width"
         placeholder="blur"
       />
-
+{/* 
       <Section>
         <h3>Introduction</h3>
         <p>
@@ -138,7 +132,7 @@ export default function Home() {
           product development and understanding the need to know explicitly what
           my users problems are.
         </p>
-      </Section>
+      </Section> */}
 
       <Section>
         <h3>Read More</h3>

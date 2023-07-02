@@ -27,7 +27,7 @@ export default function Home() {
             width="3"
           />
           <FeaturedProject alt="DiCart" src={dicart} page="#" width="1" />
-          <FeaturedProject alt="iwhub" src={iwhub} page="#" width="2" />
+          <FeaturedProject alt="iwhub" src={iwhub} page="/projects/iwhub-reflection-flag" width="2" />
         </section>
 
         <section className="section" id="more">
