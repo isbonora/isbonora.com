@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import iwhub from "@/public/projects/iwhub_hero.jpg";
 import bmw_production from "./bmw_production.jpg";
+import proxemics from "./proxemics.png";
 
 import Section from "@/components/project/Section";
 import InlineSection from "@/components/project/InlineSection";
@@ -24,8 +25,15 @@ export default function Home() {
         <ProjectInfo
           clientName="Queensland University of Technology | BMW Group | Idealworks"
           datePeriod="2021"
-          bodyText="This project was completed as apart of a capstone unit at QUT. The project was completed in collaboration with Idealworks and the BMW Group."
-          tags={["Industrial Applications", "Safety", "Research", "Human-centered Design", "Model Making", "Arduino"]}
+          bodyText="This project was completed as apart of a capstone unit at QUT. The project was completed in collaboration with Idealworks and the BMW Group..."
+          tags={[
+            "Industrial Applications",
+            "Safety",
+            "Research",
+            "Human-centered Design",
+            "Model Making",
+            "Arduino",
+          ]}
         />
       </Section>
 
@@ -52,7 +60,7 @@ export default function Home() {
           experience.
         </p>
       </Section>
-
+      
       <InlineSection>
         <p>
           Research identified a need for observers of an AMR to be able to
@@ -69,10 +77,48 @@ export default function Home() {
             placeholder="blur"
           />
           <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
-            (<Link href='https://www.press.bmwgroup.com/global/article/detail/T0318827EN/first-of-its-kind-and-innovation-driver-for-sustainable-mobility:-200-000-bmw-i3-produced-to-date?language=en'>BMW Group, source</Link>)
+            Men in a BMW production line (
+            <Link href="https://www.press.bmwgroup.com/global/article/detail/T0318827EN/first-of-its-kind-and-innovation-driver-for-sustainable-mobility:-200-000-bmw-i3-produced-to-date?language=en">
+              BMW Group, source
+            </Link>
+            )
           </p>
         </div>
       </InlineSection>
+
+      <Section>
+        <h3>Solution</h3>
+        <p>
+          The Reflection Flag addresses the research findings by providing a
+          peripheral device to AMR’s that offers real time feedback to users and
+          observers around the AMR’s local space. The mast head takes in
+          existing LiDAR information and reflects back the AMR’s perception to
+          the observer through the use of an 360 degree LED matrix. Mimicking
+          the user’s position relative to the AMR on the LED matrix as a method
+          of understanding. This displayed understanding allows users local to
+          the AMR to work more efficiently where there are now clear
+          expectations that the robot sees the user and that they can expect it
+          to behave normally. In addition to the reflection function of the
+          peripheral, an interface in the centre of the mast allows for manual
+          override of the AMR without the need for external equipment.
+        </p>
+        <div className="flex flex-col items-center">
+          <Image
+            alt="Proxemics diagram showing the different zones of personal space around the reflection flag"
+            src={proxemics}
+            sizes="(min-width: 800px) 50vw, 100vw"
+            placeholder="blur"
+          />
+          <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
+            Proxemics diagram showing the different zones of personal space
+          </p>
+        </div>
+        <video autoPlay loop>
+          <source src="./proxemics.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+      </Section>
+
       {/* 
       <Section className="items-center">
         <Image
