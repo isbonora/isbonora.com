@@ -113,6 +113,7 @@ export default function Home() {
             Proxemics diagram showing the different zones of personal space
           </p>
         </div>
+        {/* FIXME: Make lazy and include image fallback */}
         <video autoPlay loop>
           <source src="./proxemics.webm" type="video/webm" />
           Your browser does not support the video tag.
