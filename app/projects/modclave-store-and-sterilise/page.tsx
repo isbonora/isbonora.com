@@ -17,7 +17,7 @@ export default function Home() {
         <Header />
         <div className="flex flex-col gap-2">
           <h1 className="left-0">modClave: Store & Sterilise</h1>
-          <p className="text-xl font-light text-slate-500">An affordable and compact sterilisation device that addresses waste mismanagement in healthcare by enabling clinics to reprocess instruments, promoting sustainability and emphasizing the importance of waste reduction during product development.</p>
+          <p className="text-md lg:text-xl font-light text-slate-500">An affordable and compact sterilisation device that addresses waste mismanagement in healthcare by enabling clinics to reprocess instruments, promoting sustainability and emphasizing the importance of waste reduction during product development.</p>
 
         </div>
 
@@ -38,6 +38,7 @@ export default function Home() {
           src={modclave}
           sizes="(min-width: 808px) 50vw, 100vw"
           className='off-width'
+          placeholder="blur"
         />
 
         <p className="leading-loose">
@@ -56,7 +57,7 @@ export default function Home() {
             alt="hero image of the modclave"
             src={instruments_stockphoto}
             sizes="(min-width: 808px) 50vw, 100vw"
-            className=''
+            placeholder="blur"
           />
           <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
             Example of single-use instruments that are often used once and disposed of in medical practices. (<Link href='https://unsplash.com/photos/pV5arhEZHiA' target="_blank">source: Ibrahim Boran, Unsplash</Link>)
@@ -75,12 +76,13 @@ export default function Home() {
         </p>
 
 
-        <div className='grid grid-cols-2 gap-12 off-width items-center bg-slate-50 px-8 py-12'>
+        <div className='grid grid-cols-1 xl:grid-cols-2  gap-12 off-width items-center bg-slate-50 px-8 py-12'>
           <div className="flex flex-col items-center">
             <Image
               alt="example of a room layout with a traditional autoclave"
               src={autoclave_requirements}
               sizes="(min-width: 800px) 50vw, 100vw"
+              placeholder="blur"
             />
             <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
               Extracted from Infection prevention and control standards: for general practices and other office-based and community-based practices (RACGP, 2014)
@@ -112,6 +114,7 @@ export default function Home() {
           src={module_closeup}
           sizes="(min-width: 808px) 50vw, 100vw"
           className='off-width'
+          placeholder="blur"
         />
 
         <p className="leading-loose">
@@ -125,8 +128,8 @@ export default function Home() {
             <span className="text-4xl">
               📁
             </span>
-            <p className="text-2xl">
-              Read the full thesis (PDF)
+            <p className="text-lg xl:text-2xl">
+              Read the full thesis
             </p>
           </Link>
 
@@ -134,8 +137,8 @@ export default function Home() {
             <span className="text-4xl">
               📺
             </span>
-            <p className="text-2xl">
-              Watch the introduction video (Youtube)
+            <p className="text-lg xl:text-2xl">
+              Watch the introduction video
             </p>
           </Link>
 
@@ -145,8 +148,8 @@ export default function Home() {
             <span className="text-4xl">
               📒
             </span>
-            <p className="text-2xl">
-              Explore the DDR (PDF)
+            <p className="text-lg xl:text-2xl">
+              Explore the DDR
             </p>
           </Link>
         </div>

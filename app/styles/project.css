@@ -7,15 +7,18 @@ p {
     @apply text-base max-w-3xl  leading-relaxed;
 }
 
-.off-width {
-    
-    left: 50%;
-    margin-left: -35vw;
-    margin-right: -35vw;
-    max-width: 100vw;
-    position: relative;
-    right: 50%;
-    width: 70vw;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+
+
+@media (min-width: 1024px) { 
+    .off-width {
+        left: 50%;
+        margin-left: -35vw;
+        margin-right: -35vw;
+        max-width: 100vw;
+        position: relative;
+        right: 50%;
+        width: 70vw;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
 }
