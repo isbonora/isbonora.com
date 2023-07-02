@@ -31,7 +31,7 @@ p {
 }
 
 .section > p {
-  @apply leading-loose;
+  @apply leading-loose pb-4;
 }
 
 .section > .lead {

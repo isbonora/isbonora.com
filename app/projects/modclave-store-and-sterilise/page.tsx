@@ -11,6 +11,10 @@ import InlineSection from "@/components/project/InlineSection";
 import ProjectInfo from "@/components/project/ProjectInfo";
 import ExternalLink from "@/components/project/ExternalLink";
 
+
+// TODO: #1 Add details about the model that was created.
+
+
 export default function Home() {
   return (
     <div className="project-body">

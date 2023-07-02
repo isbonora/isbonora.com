@@ -8,7 +8,7 @@ export default function ProjectInfoSection({
     datePeriod: string;
   }) {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-3">
         <div className="flex justify-between px-4 bg-slate-50 p-4 text-sm">
           <span>{clientName}</span>
           <span>{datePeriod}</span>
