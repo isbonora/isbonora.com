@@ -10,7 +10,7 @@ export default function Header() {
     >
       <Link href='/' className='text-black'>Isaac Bonora</Link>
       <span className="font-mono text-sm font-thin">
-        <Clock /> im München
+        <Clock /> GMT+2
       </span>
     </section>
   );

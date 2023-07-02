@@ -26,11 +26,9 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
-
 .text-secondary {
   @apply text-slate-600;
 }
-
 
 a {
   @apply text-blue-600 transition duration-150 ease-in-out;
@@ -44,10 +42,9 @@ a.button {
   @apply lg:w-auto w-full px-6 border font-normal rounded-md py-2 lg:py-1 text-slate-800 hover:bg-slate-50 hover:text-slate-800 lg:bg-white bg-gray-50 text-lg lg:text-sm;
 }
 
-
 .card-1-1 {
   aspect-ratio: 1 / 1;
-  @apply lg:col-span-1 col-span-3 ;
+  @apply lg:col-span-1 col-span-3;
 }
 
 .card-2-1 {
@@ -57,24 +54,9 @@ a.button {
 
 .card-3-1 {
   aspect-ratio: 3 / 1;
-  @apply col-span-3 ;
+  @apply col-span-3;
 }
 
 .ratio-2-1 {
   aspect-ratio: 2.075 / 1;
-}
-
-
-/* Define section styles */
-
-.section {
-  @apply flex flex-col gap-3;
-} 
-
-.section > h2 {
-  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2;
-}
-
-.section > h3 {
-  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2;
 }
