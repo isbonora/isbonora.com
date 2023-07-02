@@ -2,12 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import modclave from "@/public/projects/modclaveHero.jpg";
-import iwhub from "@/public/projects/iwhub_hero.jpg"
-
-
 import module_closeup from "./module_closeup.jpg";
 import autoclave_requirements from "./autoclave_requirements.png";
-
 import instruments_stockphoto from "./ibrahim-boran-pV5arhEZHiA-unsplash.jpg";
 
 import Header from "@/components/header";
@@ -56,17 +52,17 @@ export default function Home() {
 
         <div className="flex flex-col items-center gap-2">
 
-        <Image
-          alt="hero image of the modclave"
-          src={instruments_stockphoto}
-          sizes="(min-width: 808px) 50vw, 100vw"
-          className=''
-        />
-            <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
-              Example of single-use instruments that are often used once and disposed of in medical practices. (<Link href='https://unsplash.com/photos/pV5arhEZHiA' target="_blank">source: Ibrahim Boran, Unsplash</Link>)
-            </p>
-          </div>
-        
+          <Image
+            alt="hero image of the modclave"
+            src={instruments_stockphoto}
+            sizes="(min-width: 808px) 50vw, 100vw"
+            className=''
+          />
+          <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
+            Example of single-use instruments that are often used once and disposed of in medical practices. (<Link href='https://unsplash.com/photos/pV5arhEZHiA' target="_blank">source: Ibrahim Boran, Unsplash</Link>)
+          </p>
+        </div>
+
 
         <p className="leading-loose">
           While healthcare professionals express their intentions to be
@@ -119,40 +115,40 @@ export default function Home() {
         />
 
         <p className="leading-loose">
-          With its potential to promote sustainable practices across various facets of the medical industry, the modClave represents a significant advancement in addressing waste mismanagement. This project has not only enhanced my skills as a graduate of industrial design has emphasised for myself the importance of addressing waste during product development and understanding the need to know explicitly what my users' problems are.
+          With its potential to promote sustainable practices across various facets of the medical industry, the modClave represents a significant advancement in addressing waste mismanagement. This project has not only enhanced my skills as a graduate of industrial design has emphasised for myself the importance of addressing waste during product development and understanding the need to know explicitly what my users problems are.
         </p>
 
 
 
         <div id="section" className="flex flex-col gap-2">
-        <Link id="file_link" href='https://www.dropbox.com/s/ks2ap17jhnmhhqg/modClave%20Designed%20Document%20with%20Justification%20Chapter%201-11-2022.pdf?dl=0' target="_blank" className="bg-gray-100 flex justify-between items-center hover:bg-gray-200 px-6 py-4">
-          <span className="text-4xl">
-            📁
-          </span>
-          <p className="text-2xl">
-            Read the full thesis (PDF)
-          </p>
-        </Link>
+          <Link id="file_link" href='https://www.dropbox.com/s/ks2ap17jhnmhhqg/modClave%20Designed%20Document%20with%20Justification%20Chapter%201-11-2022.pdf?dl=0' target="_blank" className="bg-gray-100 flex justify-between items-center hover:bg-gray-200 px-6 py-4">
+            <span className="text-4xl">
+              📁
+            </span>
+            <p className="text-2xl">
+              Read the full thesis (PDF)
+            </p>
+          </Link>
 
-        <Link id="file_link" href='https://www.youtube.com/watch?v=l13PFV3bYVM' target="_blank" className="bg-gray-100 flex justify-between items-center hover:bg-gray-200 px-6 py-4">
-          <span className="text-4xl">
-          📺
-          </span>
-          <p className="text-2xl">
-            Watch the introduction video (Youtube)
-          </p>
-        </Link>
+          <Link id="file_link" href='https://www.youtube.com/watch?v=l13PFV3bYVM' target="_blank" className="bg-gray-100 flex justify-between items-center hover:bg-gray-200 px-6 py-4">
+            <span className="text-4xl">
+              📺
+            </span>
+            <p className="text-2xl">
+              Watch the introduction video (Youtube)
+            </p>
+          </Link>
 
 
 
-        <Link id="file_link" href='https://www.youtube.com/watch?v=l13PFV3bYVM' target="_blank" className="bg-gray-100 flex justify-between items-center hover:bg-gray-200 px-6 py-4">
-          <span className="text-4xl">
-          📒
-          </span>
-          <p className="text-2xl">
-            Explore the DDR (PDF)
-          </p>
-        </Link>
+          <Link id="file_link" href='https://www.dropbox.com/s/hz9wytv6cwmpg6a/Final%20DDR%20Pages%20-%20Isaac%20Bonora%20-%2010-11-22.pdf?dl=0' target="_blank" className="bg-gray-100 flex justify-between items-center hover:bg-gray-200 px-6 py-4">
+            <span className="text-4xl">
+              📒
+            </span>
+            <p className="text-2xl">
+              Explore the DDR (PDF)
+            </p>
+          </Link>
         </div>
 
       </div>
