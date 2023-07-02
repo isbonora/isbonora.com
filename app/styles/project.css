@@ -1,13 +1,14 @@
 h1 {
-    @apply text-5xl font-bold max-w-2xl;
+    @apply text-3xl font-light max-w-3xl;
 }
 
 
 p {
-    @apply text-base max-w-2xl  leading-relaxed;
+    @apply text-base max-w-3xl  leading-relaxed;
 }
 
-img {
+.off-width {
+    
     left: 50%;
     margin-left: -35vw;
     margin-right: -35vw;

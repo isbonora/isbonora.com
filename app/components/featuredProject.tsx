@@ -20,7 +20,7 @@ type StaticImageData = {
 export default function FeaturedProject({ alt, src, page, width }: { alt: string, src: StaticImageData, page: string, width: string }) {
   return (
       <Link href={page}
-        className={`bg-gray-50 card-${width}-1 outline outline-gray-100 rounded-md p-4 overflow-hidden relative hover:shadow-xl hover:-translate-y-0.5 transition duration-300`}
+        className={`bg-gray-50 card-${width}-1 hover:outline outline-gray-200 selected:outline selected:outline-blue-500 p-4 overflow-hidden relative `}
       >
         <Image
           alt={alt}
