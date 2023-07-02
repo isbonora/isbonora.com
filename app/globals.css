@@ -63,3 +63,18 @@ a.button {
 .ratio-2-1 {
   aspect-ratio: 2.075 / 1;
 }
+
+
+/* Define section styles */
+
+.section {
+  @apply flex flex-col gap-3;
+} 
+
+.section > h2 {
+  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2;
+}
+
+.section > h3 {
+  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2;
+}

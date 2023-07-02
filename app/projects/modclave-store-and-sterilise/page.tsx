@@ -13,7 +13,7 @@ import "@/styles/project.css";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 py-12 lg:py-24">
-      <div className="max-w-3xl w-full flex flex-col gap-16 leading-loose">
+      <div className="max-w-3xl w-full flex flex-col gap-16 lg:gap-24 leading-loose">
         <Header />
         <div className="flex flex-col gap-2">
           <h1 className="left-0">modClave: Store & Sterilise</h1>
@@ -54,8 +54,7 @@ export default function Home() {
         </div>
 
 
-        <div className="flex flex-col items-center gap-2">
-
+        <div className="section items-center">
           <Image
             alt="hero image of the modclave"
             src={instruments_stockphoto}

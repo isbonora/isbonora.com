@@ -8,7 +8,7 @@ export default function Header() {
       id="header"
       className="flex justify-between text-secondary font-light"
     >
-      <span>hello [@] isbonora.com</span>
+      <Link href='/' className='text-black'>Isaac Bonora</Link>
       <span className="font-mono text-sm font-thin">
         <Clock /> im München
       </span>

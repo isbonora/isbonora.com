@@ -13,15 +13,13 @@ import FeaturedProject from "@/components/featuredProject";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 py-12 lg:py-24">
-      <div className="max-w-2xl w-full flex flex-col gap-12">
+      <div className="max-w-3xl w-full flex flex-col gap-12">
         <Header />
 
         <About />
 
         <section className="grid grid-cols-3 gap-6" id="featured">
-          <div className="col-span-3">
-            <h2 className="text-secondary">Featured</h2>
-          </div>
+          <h2 className='text-2xl font-light text-slate-500'>Featured</h2>
           <FeaturedProject
             alt="modClave"
             src={modclave}
@@ -32,8 +30,8 @@ export default function Home() {
           <FeaturedProject alt="iwhub" src={iwhub} page="#" width="2" />
         </section>
 
-        <section className="flex flex-col gap-6" id="more">
-          <h2 className="text-secondary">Projects</h2>
+        <section className="section" id="more">
+          <h2>Projects</h2>
           <Link href="#" className="flex text-center gap-3">
             <h3 className="text-xl">Reflection Flag</h3>
             <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>

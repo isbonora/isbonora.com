@@ -22,11 +22,3 @@ p {
         margin-bottom: 2rem;
     }
 }
-
-.section {
-    @apply flex flex-col gap-2;
-} 
-
-.section > h3 {
-    @apply text-3xl font-light;
-}
