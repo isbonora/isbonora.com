@@ -34,6 +34,7 @@ export default function Home() {
           Industrial Design degree as my disertation project. The projects
           outcome incluced a reserach thesis and a developed product based on
           the reserach completed in the first 6 months of the project."
+          tags= {["Advanced Research", "Model Making", "Sustainability", "Healthcare", "Medical", "Human-centered Design"]}
         />
       </Section>
 

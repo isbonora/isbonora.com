@@ -25,6 +25,7 @@ export default function Home() {
           clientName="Queensland University of Technology | BMW Group | Idealworks"
           datePeriod="2021"
           bodyText="This project was completed as apart of a capstone unit at QUT. The project was completed in collaboration with Idealworks and the BMW Group."
+          tags={["Industrial Applications", "Safety", "Research", "Human-centered Design", "Model Making", "Arduino"]}
         />
       </Section>
 
