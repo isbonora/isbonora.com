@@ -36,7 +36,7 @@ export default function FeaturedProject({ alt, src, page, title, description }: 
       </div>
 
       <h2 className="text-xl font-light mt-2">{title}</h2>
-      <p className="text-sm leading-relaxed mb-2 text-slate-700">{description}</p>
+      <p className="text-sm leading-relaxed mb-2 text-slate-600">{description}</p>
     </Link>
   );
 }
