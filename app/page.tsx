@@ -18,7 +18,10 @@ export default function Home() {
 
         <About />
 
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-6" id="featured">
+        <section
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+          id="featured"
+        >
           <h2 className="text-2xl font-light text-slate-500 col-span-1 lg:col-span-2">
             Featured
           </h2>
@@ -27,18 +30,21 @@ export default function Home() {
             src={modclave}
             page="/projects/modclave-store-and-sterilise"
             title="modClave: Store & Sterilise"
+            description="The modClave is a modular sterilisation desktop appliance that supports small-to-medium-sized medical practices by reprocessing medical instruments along side patient care."
           />
           <FeaturedProject
             alt="DiCart"
             src={dicart}
             page="#"
             title="DiCart"
+            description="A dicart solution to solve all the things"
           />
           <FeaturedProject
             alt="iwhub"
             src={iwhub}
             page="/projects/iwhub-reflection-flag"
             title="iw.hub: Reflection Flag"
+            description="A project with BMW Group"
           />
         </section>
 

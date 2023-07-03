@@ -17,11 +17,11 @@ type StaticImageData = {
   placeholder?: string;
 };
 
-export default function FeaturedProject({ alt, src, page, title }: { alt: string, src: StaticImageData, page: string, title: string }) {
+export default function FeaturedProject({ alt, src, page, title, description }: { alt: string, src: StaticImageData, page: string, title: string, description: string }) {
   return (
     <Link
       href={page}
-      className={`bg-slate-50 hover:outline outline-slate-200 selected:outline selected:outline-blue-500 p-4 text-black hover:text-black hover:no-underline`}
+      className={`bg-slate-100 hover:outline outline-slate-200 selected:outline selected:outline-blue-500 p-4 text-black hover:text-black hover:no-underline`}
     >
       <div className="aspect-square overflow-hidden relative">
         <Image
@@ -36,10 +36,7 @@ export default function FeaturedProject({ alt, src, page, title }: { alt: string
       </div>
 
       <h2 className="text-xl font-light mt-2">{title}</h2>
-      <p className="text-sm leading-relaxed mb-2">
-        Some body description will go here as a short explainer about how the
-        product works.
-      </p>
+      <p className="text-sm leading-relaxed mb-2 text-slate-700">{description}</p>
     </Link>
   );
 }
