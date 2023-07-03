@@ -10,16 +10,17 @@ import InlineSection from "@/components/project/InlineSection";
 import ProjectInfo from "@/components/project/ProjectInfo";
 import ExternalLink from "@/components/project/ExternalLink";
 
+import ModelViewer from "@/components/project/ModelViewer";
+
 export default function Home() {
   return (
     <div className="project-body">
       <Section>
         <h1>Reflection Flag</h1>
         <p className="lead">
-          Enhances the interaction between warehouse workers and
-          autonomous mobile robots, improving understanding, control,
-          satisfaction, safety, efficiency, and offering a unique working
-          experience.
+          Enhances the interaction between warehouse workers and autonomous
+          mobile robots, improving understanding, control, satisfaction, safety,
+          efficiency, and offering a unique working experience.
         </p>
 
         <ProjectInfo
@@ -114,11 +115,16 @@ export default function Home() {
           </p>
         </div>
         {/* FIXME: #3 Make lazy and include image fallback */}
-        <video autoPlay loop width='1280' height='720'>
+        <video autoPlay loop width="1280" height="720">
           <source src="./proxemics.webm" type="video/webm" />
           <source src="./proxemics.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      </Section>
+
+      <Section>
+        <h3>Process</h3>
+        <ModelViewer model_id="e897f140bc7e4f3ead6dc109f586fddb" />
       </Section>
 
       {/* 
