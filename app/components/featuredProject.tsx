@@ -17,11 +17,13 @@ type StaticImageData = {
   placeholder?: string;
 };
 
-export default function FeaturedProject({ alt, src, page, width }: { alt: string, src: StaticImageData, page: string, width: string }) {
+export default function FeaturedProject({ alt, src, page, title }: { alt: string, src: StaticImageData, page: string, title: string }) {
   return (
-      <Link href={page}
-        className={`bg-gray-50 card-${width}-1 hover:outline outline-gray-200 selected:outline selected:outline-blue-500 p-4 overflow-hidden relative `}
-      >
+    <Link
+      href={page}
+      className={`bg-slate-50 hover:outline outline-slate-200 selected:outline selected:outline-blue-500 p-4 text-black hover:text-black hover:no-underline`}
+    >
+      <div className="aspect-square overflow-hidden relative">
         <Image
           alt={alt}
           src={src}
@@ -31,6 +33,13 @@ export default function FeaturedProject({ alt, src, page, width }: { alt: string
             objectFit: "cover", // cover, contain, none
           }}
         />
+      </div>
+
+      <h2 className="text-xl font-light mt-2">{title}</h2>
+      <p className="text-sm leading-relaxed mb-2">
+        Some body description will go here as a short explainer about how the
+        product works.
+      </p>
     </Link>
   );
 }

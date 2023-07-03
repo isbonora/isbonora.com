@@ -18,16 +18,28 @@ export default function Home() {
 
         <About />
 
-        <section className="grid grid-cols-3 gap-6" id="featured">
-          <h2 className='text-2xl font-light text-slate-500'>Featured</h2>
+        <section className="grid grid-cols-2 gap-6" id="featured">
+          <h2 className="text-2xl font-light text-slate-500 col-span-2">
+            Featured
+          </h2>
           <FeaturedProject
             alt="modClave"
             src={modclave}
             page="/projects/modclave-store-and-sterilise"
-            width="3"
+            title="modClave: Store & Sterilise"
           />
-          <FeaturedProject alt="DiCart" src={dicart} page="#" width="1" />
-          <FeaturedProject alt="iwhub" src={iwhub} page="/projects/iwhub-reflection-flag" width="2" />
+          <FeaturedProject
+            alt="DiCart"
+            src={dicart}
+            page="#"
+            title="DiCart"
+          />
+          <FeaturedProject
+            alt="iwhub"
+            src={iwhub}
+            page="/projects/iwhub-reflection-flag"
+            title="iw.hub: Reflection Flag"
+          />
         </section>
 
         <section className="section" id="more">

@@ -60,7 +60,7 @@ export default function Home() {
           experience.
         </p>
       </Section>
-      
+
       <InlineSection>
         <p>
           Research identified a need for observers of an AMR to be able to
@@ -114,8 +114,9 @@ export default function Home() {
           </p>
         </div>
         {/* FIXME: #3 Make lazy and include image fallback */}
-        <video autoPlay loop>
+        <video autoPlay loop width='1280' height='720'>
           <source src="./proxemics.webm" type="video/webm" />
+          <source src="./proxemics.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Section>
