@@ -122,10 +122,10 @@ export default function Home() {
         </video>
       </Section>
 
-      <Section>
+      {/* <Section>
         <h3>Process</h3>
         <ModelViewer model_id="e897f140bc7e4f3ead6dc109f586fddb" />
-      </Section>
+      </Section> */}
 
       {/* 
       <Section className="items-center">

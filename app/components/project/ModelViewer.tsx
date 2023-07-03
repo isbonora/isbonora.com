@@ -3,6 +3,8 @@
 // TODO: Don't load this until the user scrolls over it on desktop.
 // TODO: Make optional for mobile. Have a splash screen with a button to load it.
 
+// FIXME: Getting 'ReferenceError: self is not defined' error when building for production.
+
 import Sketchfab from "@sketchfab/viewer-api";
 import { useRef } from "react";
 
