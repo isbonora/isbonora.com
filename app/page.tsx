@@ -18,8 +18,8 @@ export default function Home() {
 
         <About />
 
-        <section className="grid grid-cols-2 gap-6" id="featured">
-          <h2 className="text-2xl font-light text-slate-500 col-span-2">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-6" id="featured">
+          <h2 className="text-2xl font-light text-slate-500 col-span-1 lg:col-span-2">
             Featured
           </h2>
           <FeaturedProject
