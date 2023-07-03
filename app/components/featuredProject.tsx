@@ -23,7 +23,7 @@ export default function FeaturedProject({ alt, src, page, title, description }: 
       href={page}
       className={`bg-slate-100 hover:outline outline-slate-200 selected:outline selected:outline-blue-500 p-4 text-black hover:text-black hover:no-underline`}
     >
-      <div className="aspect-square overflow-hidden relative">
+      <div className="relative overflow-hidden aspect-square">
         <Image
           alt={alt}
           src={src}
@@ -35,8 +35,8 @@ export default function FeaturedProject({ alt, src, page, title, description }: 
         />
       </div>
 
-      <h2 className="text-xl font-light mt-2">{title}</h2>
-      <p className="text-sm leading-relaxed mb-2 text-slate-600">{description}</p>
+      <h2 className="mt-2 text-xl font-light">{title}</h2>
+      <p className="mb-2 text-sm leading-relaxed text-slate-600">{description}</p>
     </Link>
   );
 }

@@ -16,7 +16,7 @@ export default function Home() {
       <Section>
         <h1>Reflection Flag</h1>
         <p className="lead">
-          The Reflection Flag enhances interaction between warehouse workers and
+          Enhances the interaction between warehouse workers and
           autonomous mobile robots, improving understanding, control,
           satisfaction, safety, efficiency, and offering a unique working
           experience.
@@ -76,7 +76,7 @@ export default function Home() {
             sizes="(min-width: 800px) 50vw, 100vw"
             placeholder="blur"
           />
-          <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
+          <p className="max-w-md text-xs font-light leading-loose text-slate-500">
             Men in a BMW production line (
             <Link href="https://www.press.bmwgroup.com/global/article/detail/T0318827EN/first-of-its-kind-and-innovation-driver-for-sustainable-mobility:-200-000-bmw-i3-produced-to-date?language=en">
               BMW Group, source
@@ -109,7 +109,7 @@ export default function Home() {
             sizes="(min-width: 800px) 50vw, 100vw"
             placeholder="blur"
           />
-          <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
+          <p className="max-w-md text-xs font-light leading-loose text-slate-500">
             Proxemics diagram showing the different zones of personal space
           </p>
         </div>
@@ -160,7 +160,7 @@ export default function Home() {
             sizes="(min-width: 800px) 50vw, 100vw"
             placeholder="blur"
           />
-          <p className=" text-xs font-light text-slate-500 max-w-md leading-loose">
+          <p className="max-w-md text-xs font-light leading-loose text-slate-500">
             Extracted from Infection prevention and control standards: for
             general practices and other office-based and community-based
             practices (RACGP, 2014)

@@ -12,19 +12,19 @@ import FeaturedProject from "@/components/featuredProject";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4 py-12 lg:py-24">
-      <div className="max-w-3xl w-full flex flex-col gap-12">
+    <main className="flex flex-col items-center justify-between min-h-screen p-4 py-12 lg:py-24">
+      <div className="flex flex-col w-full max-w-3xl gap-12">
         <Header />
 
         <About />
 
         <section
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+          className="grid col-span-1 gap-6 lg:grid-cols-2 "
           id="featured"
         >
-          <h2 className="text-2xl font-light text-slate-500 col-span-1 lg:col-span-2">
+          <h3 className="col-span-1 text-xl font-light text-slate-500 lg:col-span-2">
             Featured
-          </h2>
+          </h3>
           <FeaturedProject
             alt="modClave"
             src={modclave}
@@ -48,32 +48,32 @@ export default function Home() {
           />
         </section>
 
-        <section className="section" id="more">
-          <h2>Projects</h2>
-          <Link href="#" className="flex text-center gap-3">
-            <h3 className="text-xl">Reflection Flag</h3>
-            <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>
+        <div className="section" id="more">
+          <h3 className="text-xl font-light text-slate-500">Projects</h3>
+          <Link href="#" className="flex gap-3 text-center">
+            <h3 className="">Reflection Flag</h3>
+            <span className="flex-grow mb-3 border-b-2 border-blue-100 border-dashed"></span>
             <span className="font-light">Project with BMW Group</span>
           </Link>
 
-          <Link href="#" className="flex text-center gap-3">
-            <h3 className="text-xl">Reflection Flag</h3>
-            <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>
+          <Link href="#" className="flex gap-3 text-center">
+            <h3 className="">Reflection Flag</h3>
+            <span className="flex-grow mb-3 border-b-2 border-blue-100 border-dashed"></span>
             <span className="font-light">Project with BMW Group</span>
           </Link>
 
-          <Link href="#" className="flex text-center gap-3">
-            <h3 className="text-xl">Reflection Flag</h3>
-            <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>
+          <Link href="#" className="flex gap-3 text-center">
+            <h3 className="">Reflection Flag</h3>
+            <span className="flex-grow mb-3 border-b-2 border-blue-100 border-dashed"></span>
             <span className="font-light">Project with BMW Group</span>
           </Link>
 
-          <Link href="#" className="flex text-center gap-3">
-            <h3 className="text-xl">Reflection Flag</h3>
-            <span className="flex-grow border-b-2 border-blue-100 mb-3 border-dashed"></span>
+          <Link href="#" className="flex gap-3 text-center">
+            <h3 className="">Reflection Flag</h3>
+            <span className="flex-grow mb-3 border-b-2 border-blue-100 border-dashed"></span>
             <span className="font-light">Project with BMW Group</span>
           </Link>
-        </section>
+        </div>
       </div>
     </main>
   );

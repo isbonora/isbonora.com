@@ -23,7 +23,7 @@ export default function About() {
         techniques to support teams internally with web-based solutions to
         improve customer satisfaction.
       </p>
-      <div className="mt-5 flex flex-wrap gap-4">
+      <div className="mt-5 grid grid-cols-2 lg:flex lg:flex-wrap gap-4">
         <Link href="#" className="button">
           Instagram
         </Link>
@@ -36,8 +36,7 @@ export default function About() {
         <Link
           href="https://docs.google.com/spreadsheets/d/1r6yXxNRnAWpy8E9hcNJVzMdt4hY5n5QvVtYqNK--Hhw/edit?usp=sharing"
           target="_blank"
-          className="button"
-        >
+          className="button">
           CV
         </Link>
       </div>

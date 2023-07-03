@@ -39,17 +39,17 @@ a:hover {
 }
 
 a.button {
-  @apply lg:w-auto w-full px-6 border font-normal rounded-md py-2 lg:py-1 text-slate-800 hover:bg-slate-50 hover:text-slate-800 lg:bg-white bg-gray-50 text-lg lg:text-sm;
+  @apply w-full px-6 py-2 text-lg font-normal rounded lg:border hover:outline outline-slate-200 lg:w-auto lg:py-1 text-slate-800 hover:text-slate-800 lg:bg-white bg-slate-100 lg:text-sm;
 }
 
 .card-1-1 {
   aspect-ratio: 1 / 1;
-  @apply lg:col-span-1 col-span-3;
+  @apply col-span-3 lg:col-span-1;
 }
 
 .card-2-1 {
   aspect-ratio: 2.1045 / 1;
-  @apply lg:col-span-2 col-span-3;
+  @apply col-span-3 lg:col-span-2;
 }
 
 .card-3-1 {
