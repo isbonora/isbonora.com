@@ -103,7 +103,11 @@ export default function Home() {
           peripheral, an interface in the centre of the mast allows for manual
           override of the AMR without the need for external equipment.
         </p>
-        <div className="flex flex-col items-center">
+        
+      </Section>
+
+      <InlineSection>
+      <div className="flex flex-col items-center">
           <Image
             alt="Proxemics diagram showing the different zones of personal space around the reflection flag"
             src={proxemics}
@@ -120,6 +124,13 @@ export default function Home() {
           <source src="./proxemics.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        </InlineSection>
+
+      <Section>
+        <h3>Outcome</h3>
+        <p>
+        The peripheral works as an effective tool to improve satisfaction and reduce chances of accidents in the workplace. Through the use of mimicry in the LED matrix, and swift manual override in the handle, the Reflection Flag has clear benefits for any AMR found in warehouses.
+        </p>
       </Section>
 
       {/* <Section>
