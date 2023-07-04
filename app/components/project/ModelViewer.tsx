@@ -92,6 +92,7 @@ export default function ModelViewer({ className, model_path, annotations }: Mode
               {annotations &&
                 annotations.length > 0 && annotations.map((annotation) => (
                   <Annotation
+                    key={annotation.title}
                     position={annotation.position}
                     title={annotation.title}
                     body={annotation.body}
