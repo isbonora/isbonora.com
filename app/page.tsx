@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-
 import modclave from "@/public/projects/modclaveHero.jpg";
 import dicart from "@/public/projects/dicart_hero.jpg";
 
