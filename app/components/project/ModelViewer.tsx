@@ -5,63 +5,103 @@
 
 // FIXME: Getting 'ReferenceError: self is not defined' error when building for production.
 
-import Sketchfab from "@sketchfab/viewer-api";
-import { useRef } from "react";
+import { Canvas } from "@react-three/fiber";
+import {
+  Center,
+  Html,
+  OrbitControls,
+  Environment,
+  useGLTF,
+} from "@react-three/drei";
 
-export default function ModelViewer({ model_id }: { model_id: string }) {
-  const myFrame = useRef<HTMLDivElement>(null);
+import { useState } from "react";
 
-  function onViewerSuccess(api: any) {
-    console.log("Viewer API success");
-  }
+export default function ModelViewer() {
+  return (
+    <div
+      className="off-width bg-slate-50"
+      style={{
+        height: "80vh",
+      }}
+    >
+      <Canvas shadows camera={{ position: [8, 1.5, 8], fov: 25 }}>
+        <group position={[0, -1, 0]}>
+          <Center top>
+            <LoadedModel />
+          </Center>
+          <Annotation position={[-0.1, 1.36, -0.7]} title='Handle' body="The handle provides quick and manual overide in the event of device confusion or failure" />
+          {/* <AccumulativeShadows
+            temporal
+            frames={100}
+            color="orange"
+            colorBlend={2}
+            toneMapped={true}
+            alphaTest={0.9}
+            opacity={2}
+            scale={12}
+          >
+            <RandomizedLight
+              amount={8}
+              radius={4}
+              ambient={0.5}
+              intensity={1}
+              position={[5, 5, -10]}
+              bias={0.001}
+            />
+          </AccumulativeShadows> */}
+        </group>
+        <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
+        <Environment preset="city" />
+      </Canvas>
+    </div>
+  );
+}
 
-  if (myFrame.current) {
-    const iframe = myFrame.current.firstElementChild;
+// Import model from GLB file
+function LoadedModel() {
+  const gltf = useGLTF("/projects/reflection_flag_compressed.glb");
+  return <primitive object={gltf.scene} dispose={null} />;
+}
 
-    const client = new Sketchfab(iframe);
-
-    client.init(model_id, {
-      animation_autoplay: 1,
-      autostart: 1,
-      autospin:0.2,
-      ui_infos: 0,
-      ui_watermark: 0,
-      ui_settings: 0,
-      ui_vr: 0,
-      ui_inspector: 0,
-      ui_stop: 0,
-      ui_animations: 0,
-      ui_controls: 0,
-      ui_general_controls: 0,
-      ui_help: 0,
-      ui_hint: 0,
-      ui_loading: 0,
-      dnt: 1,
-      // Loading bar and other accent bits
-      ui_color: "0f172a",
-      transparent: 1,
-      success: onViewerSuccess,
-      error: function onError(error: any) {
-        alert("Viewer Error");
-        console.log(error);
-      },
-    });
-  }
+// Create annotation
+function Annotation({
+  position,
+  title,
+  body,
+}: {
+  position: [number, number, number];
+  title: string;
+  body: string;
+}) {
+  const [clicked, setClicked] = useState(false);
 
   return (
-    <div ref={myFrame} className="off-width">
-      <iframe
-        src=""
-        allow="fullscreen"
-        xr-spatial-tracking="true"
-        execution-while-out-of-viewport="true"
-        execution-while-not-rendered="true"
-        web-share="true"
-        style={{
-          width: "100%",
-          height: "calc(80vh)",
-        }}
-      ></iframe>
-    </div>
+    <group position={position}>
+      <Html occlude={true} as="div" distanceFactor={1} zIndexRange={[1, 0]}>
+        <div
+          onMouseDown={() => setClicked(!clicked)}
+          className="w-12 h-12 mx-auto text-sm text-center bg-white rounded-full cursor-pointer outline outline-1 animate-ping"
+          style={{
+            opacity: clicked ? 1 : 0.3,
+          }}
+        >
+          <span className="py-auto"></span>
+        </div>
+        {/* On click event, show tab full of infomation */}
+      </Html>
+      {clicked && (
+        <Html as="div" zIndexRange={[2, 1]}>
+          <div className="absolute z-10 flex flex-col w-64 gap-2 pb-2 text-sm bg-slate-100">
+            <div className="flex justify-between px-2 py-1 bg-slate-300">
+              <div className="">{title}</div>
+              <div className="" onClick={() => setClicked(!clicked)}>
+                X
+              </div>
+            </div>
+            <div className="px-2">{body}</div>
+          </div>
+        </Html>
+      )}
+    </group>
   );
 }
