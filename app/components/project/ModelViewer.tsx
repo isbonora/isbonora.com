@@ -4,6 +4,7 @@
 // TODO: Make optional for mobile. Have a splash screen with a button to load it.
 // TODO: Make annotation content richer. Able images and links.
 // TODO: When one annotation opens, close the others.
+// TODO: Loading splash screen.
 
 import { Canvas } from "@react-three/fiber";
 import {
@@ -12,13 +13,16 @@ import {
   OrbitControls,
   Environment,
   useGLTF,
+  useProgress,
 } from "@react-three/drei";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 
 export default function ModelViewer() {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [annotationActive, setAnnotationActive] = useState(false);
+
+  const [isLoading, setIsLoading] = useState(true);
   
   const ref = useRef<HTMLDivElement>(null);
 
@@ -82,7 +86,9 @@ export default function ModelViewer() {
             autoRotateSpeed={1}
           />
           <Environment preset="city" />
+          
         </Canvas>
+        
       )}
     </div>
   );
@@ -91,7 +97,16 @@ export default function ModelViewer() {
 // Import model from GLB file
 function LoadedModel() {
   const gltf = useGLTF("/projects/reflection_flag_compressed.glb");
-  return <primitive object={gltf.scene} dispose={null} />;
+  return (
+    <Suspense fallback={<Loader />}>
+      <primitive object={gltf.scene} dispose={null} />
+    </Suspense>
+  );
+}
+
+function Loader() {
+  const { active, progress, errors, item, loaded, total } = useProgress();
+  return <Html center>{progress} % loaded</Html>;
 }
 
 // Create annotation
@@ -129,7 +144,7 @@ function Annotation({
           onMouseDown={() => setClicked(!clicked)}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
-          className="mx-auto text-sm text-center transition-all bg-blue-200 border-4 border-blue-300 rounded-full cursor-pointer w-28 h-28 lg:w-16 lg:h-16 hover:w-28 hover:h-28"
+          className="mx-auto text-sm text-center transition-all bg-blue-200 border-4 border-blue-300 rounded-full cursor-pointer w-28 h-28 lg:w-18 lg:h-18 hover:w-28 hover:h-28"
           style={{
             opacity: hovered ? 1 : 0.8,
           }}
