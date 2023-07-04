@@ -37,7 +37,6 @@ export default function Home() {
           ]}
         />
       </Section>
-
       <Image
         alt="hero image of the iwhub by idealworks with the reflection flag attached"
         src={iwhub}
@@ -45,7 +44,6 @@ export default function Home() {
         className="off-width"
         placeholder="blur"
       />
-
       <Section>
         <h3>Introduction</h3>
         <p>
@@ -61,7 +59,6 @@ export default function Home() {
           experience.
         </p>
       </Section>
-
       <InlineSection>
         <p>
           Research identified a need for observers of an AMR to be able to
@@ -86,7 +83,6 @@ export default function Home() {
           </p>
         </div>
       </InlineSection>
-
       <Section>
         <h3>Solution</h3>
         <p>
@@ -103,11 +99,7 @@ export default function Home() {
           peripheral, an interface in the centre of the mast allows for manual
           override of the AMR without the need for external equipment.
         </p>
-        
-      </Section>
-
-      <InlineSection>
-      <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <Image
             alt="Proxemics diagram showing the different zones of personal space around the reflection flag"
             src={proxemics}
@@ -119,124 +111,51 @@ export default function Home() {
           </p>
         </div>
         {/* FIXME: #3 Make lazy and include image fallback */}
-        <video autoPlay loop width="1280" height="720">
+        {/* <video autoPlay loop width="1280" height="720">
           <source src="./proxemics.webm" type="video/webm" />
           <source src="./proxemics.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
-        </InlineSection>
-
-      <Section>
-        <h3>Outcome</h3>
-        <p>
-        The peripheral works as an effective tool to improve satisfaction and reduce chances of accidents in the workplace. Through the use of mimicry in the LED matrix, and swift manual override in the handle, the Reflection Flag has clear benefits for any AMR found in warehouses.
-        </p>
+        </video> */}
       </Section>
-
-      {/* <Section>
-        <h3>Process</h3>
-        <ModelViewer model_id="e897f140bc7e4f3ead6dc109f586fddb" />
-      </Section> */}
-
-      {/* 
-      <Section className="items-center">
-        <Image
-          alt="hero image of the modclave"
-          src={instruments_stockphoto}
-          sizes="(min-width: 808px) 50vw, 100vw"
-          placeholder="blur"
+      <Section>
+        <ModelViewer
+          className="off-width bg-slate-50 h-[80vh]"
+          model_path="/projects/reflection_flag_compressed.glb"
+          annotations={[
+            {
+              position: [-0.12, 2.2, -0.7],
+              title: "Mast",
+              body: "The mast is the main body of the device. It houses the LED matrix that reflects the AMR's perception of the user.",
+            },
+            {
+              position: [-0.12, 1.32, -0.7],
+              title: "Handle",
+              body: "The handle provides quick and manual overide in the event of device confusion or failure.",
+            },
+          ]}
         />
-        <p className="caption">
-          Example of single-use instruments that are often used once and
-          disposed of in medical practices. (
-          <Link href="https://unsplash.com/photos/pV5arhEZHiA" target="_blank">
-            source: Ibrahim Boran, Unsplash
-          </Link>
-          )
+      </Section>
+      <Section>
+        <h3>Summary</h3>
+        <p>
+          The peripheral works as an effective tool to improve satisfaction and
+          reduce chances of accidents in the workplace. Through the use of
+          mimicry in the LED matrix, and swift manual override in the handle,
+          the Reflection Flag has clear benefits for any AMR found in
+          warehouses.
         </p>
       </Section>
-
-      <Section>
-        <h3>Problem</h3>
-        <p>
-          While healthcare professionals express their intentions to be
-          sustainable, the reality is that the industry heavily relies on a
-          pay-per-use model, resulting in the disposal of large volumes of
-          single-use instruments. This wasteful approach is particularly
-          prominent in smaller practices, where sustainable alternatives are
-          deemed too expensive and time-consuming, exacerbating the issue of
-          excess waste.
-        </p>
-      </Section>
-
-      <InlineSection>
-        <div className="flex flex-col items-center">
-          <Image
-            alt="example of a room layout with a traditional autoclave"
-            src={autoclave_requirements}
-            sizes="(min-width: 800px) 50vw, 100vw"
-            placeholder="blur"
-          />
-          <p className="max-w-md text-xs font-light leading-loose text-slate-500">
-            Extracted from Infection prevention and control standards: for
-            general practices and other office-based and community-based
-            practices (RACGP, 2014)
-          </p>
-        </div>
-        <p>
-          Traditionally, autoclaves have been the gold standard for
-          sterilisation in the medical industry. However, their high cost, space
-          requirements, and inefficiency for smaller practices have limited
-          their accessibility and effectiveness. The modClave revolutionises
-          waste management practices by providing an affordable and compact
-          solution for clinics that are currently priced out of sustainability.
-        </p>
-      </InlineSection>
-
-      <Section>
-        <h3>Solution</h3>
-        <p>
-          By enabling small to medium-sized medical practices to reprocess
-          reusable instruments such as scissors, tweezers, and forceps, the
-          modClave effectively addresses the pain points identified during the
-          research phase. It alleviates the financial burden associated with
-          traditional autoclaves, which have forced clinics to rely on
-          single-use instruments that contribute to waste stream.
-        </p>
-      </Section>
-
-      <Image
-        alt="modclave module closeup with instruments shown"
-        src={module_closeup}
-        sizes="(min-width: 808px) 50vw, 100vw"
-        className="off-width"
-        placeholder="blur"
-      />
-
-      <Section>
-        <h3>Outcome</h3>
-        <p>
-          With its potential to promote sustainable practices across various
-          facets of the medical industry, the modClave represents a significant
-          advancement in addressing waste mismanagement. This project has not
-          only enhanced my skills as a graduate of industrial design has
-          emphasised for myself the importance of addressing waste during
-          product development and understanding the need to know explicitly what
-          my users problems are.
-        </p>
-      </Section> */}
-
       <Section>
         <h3>Read More</h3>
         <ExternalLink
-          href="https://www.dropbox.com/s/ks2ap17jhnmhhqg/modClave%20Designed%20Document%20with%20Justification%20Chapter%201-11-2022.pdf?dl=0"
+          href="https://www.dropbox.com/s/qc31gbp5kmqrtqx/Final%20Research%20Report%20Designed%20Document-C.pdf?dl=0"
           emoji="📁"
-          description="Read the full thesis"
+          description="Read the research report"
         />
         <ExternalLink
-          href="https://www.youtube.com/watch?v=l13PFV3bYVM"
+          href="https://www.dropbox.com/s/7fciujqt3b122vl/CapstoneVideo-Render-Final.mp4?dl=0"
           emoji="📺"
-          description="Watch the introduction video"
+          description="Watch the video"
         />
         <ExternalLink
           href="https://www.dropbox.com/s/zmsqbazodajv42t/Capstone%20DDR%2C%20ID7%202.pdf?dl=0"
