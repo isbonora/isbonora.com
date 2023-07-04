@@ -14,6 +14,8 @@ import {
   useGLTF,
 } from "@react-three/drei";
 
+import { XMarkIcon } from "@heroicons/react/24/outline";
+
 import { useState } from "react";
 
 export default function ModelViewer() {
@@ -29,7 +31,11 @@ export default function ModelViewer() {
           <Center top>
             <LoadedModel />
           </Center>
-          <Annotation position={[-0.1, 1.36, -0.7]} title='Handle' body="The handle provides quick and manual overide in the event of device confusion or failure" />
+          <Annotation
+            position={[-0.1, 1.36, -0.7]}
+            title="Handle"
+            body="The handle provides quick and manual overide in the event of device confusion or failure"
+          />
           {/* <AccumulativeShadows
             temporal
             frames={100}
@@ -74,31 +80,39 @@ function Annotation({
   body: string;
 }) {
   const [clicked, setClicked] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return (
     <group position={position}>
       <Html occlude={true} as="div" distanceFactor={1} zIndexRange={[1, 0]}>
         <div
           onMouseDown={() => setClicked(!clicked)}
-          className="w-12 h-12 mx-auto text-sm text-center bg-white rounded-full cursor-pointer outline outline-1 animate-ping"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          className="w-16 h-16 mx-auto text-sm text-center bg-blue-200 rounded-full cursor-pointer outline outline-blue-300"
           style={{
-            opacity: clicked ? 1 : 0.3,
+            opacity: hovered ? 1 : 0.8,
           }}
         >
           <span className="py-auto"></span>
         </div>
-        {/* On click event, show tab full of infomation */}
+      {/* On click event, show tab full of infomation */}
       </Html>
       {clicked && (
-        <Html as="div" zIndexRange={[2, 1]}>
-          <div className="absolute z-10 flex flex-col w-64 gap-2 pb-2 text-sm bg-slate-100">
-            <div className="flex justify-between px-2 py-1 bg-slate-300">
-              <div className="">{title}</div>
-              <div className="" onClick={() => setClicked(!clicked)}>
-                X
-              </div>
+        <Html zIndexRange={[2, 1]}>
+          <div
+            className="absolute top-0 left-0 z-0 w-full"
+            onClick={() => setClicked(false)}
+          ></div>
+          <div
+            className="absolute z-10 flex flex-col w-64 gap-2 pb-2 text-sm bg-slate-100 outline outline-slate-200"
+            onClick={() => setClicked(false)}
+            title="click to close"
+          >
+            <div className="flex items-center justify-between px-2 py-1 bg-slate-200">
+              <div className="text-lg font-light">{title}</div>
             </div>
-            <div className="px-2">{body}</div>
+            <div className="px-2 leading-relaxed">{body}</div>
           </div>
         </Html>
       )}
