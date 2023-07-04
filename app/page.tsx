@@ -5,11 +5,13 @@ import modclave from "@/public/projects/modclaveHero.jpg";
 import dicart from "@/public/projects/dicart_hero.jpg";
 
 import iwhub from "@/public/projects/iwhub_hero.jpg";
+import vector_on_rails from "@/public/projects/vector_on_rails.png";
 
 import Header from "@/components/header";
 import About from "@/components/about";
 import FeaturedProject from "@/components/featuredProject";
 
+import SimpleLink from "./components/SimpleLink";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-4 py-12 lg:py-24">
@@ -46,33 +48,73 @@ export default function Home() {
             title="iw.hub: Reflection Flag"
             description="A project with BMW Group"
           />
+          <FeaturedProject
+            alt="Vector on Rails"
+            src={vector_on_rails}
+            page="/projects/vector-on-rails-vectoretch-erp"
+            title="Vector on Rails"
+            description="Software development project for Vector Etch. Design and developing a order, stock and customer management system."
+          />
         </section>
 
-        <div className="section" id="more">
-          <h3 className="text-xl font-light text-slate-500">Projects</h3>
-          <Link href="#" className="flex gap-3 text-center">
-            <h3 className="">Reflection Flag</h3>
-            <span className="flex-grow mb-3 border-b-2 border-blue-100 border-dashed"></span>
-            <span className="font-light">Project with BMW Group</span>
-          </Link>
+        <div className="grid col-span-1 gap-6 lg:grid-cols-3" id="more">
+          <h3 className="col-span-3 text-xl font-light text-slate-500">
+            Projects
+          </h3>
 
-          <Link href="#" className="flex gap-3 text-center">
-            <h3 className="">Reflection Flag</h3>
-            <span className="flex-grow mb-3 border-b-2 border-blue-100 border-dashed"></span>
-            <span className="font-light">Project with BMW Group</span>
-          </Link>
+          <SimpleLink
+            href="#"
+            title="Lazer.Grub"
+            description="
+              Predecessor to Vector on Rails"
+            tags={["Rails", "Ruby", "Web Design", "UX"]}
+          />
 
-          <Link href="#" className="flex gap-3 text-center">
-            <h3 className="">Reflection Flag</h3>
-            <span className="flex-grow mb-3 border-b-2 border-blue-100 border-dashed"></span>
-            <span className="font-light">Project with BMW Group</span>
-          </Link>
+          <SimpleLink
+            href="#"
+            title="My Life in Music: 2014-2022"
+            description="
+              Data visualisation of the music I listen to everyday from 2014 to
+              2022"
+            tags={["Data", "Visualisation", "Graphic Design", "Python"]}
+          />
 
-          <Link href="#" className="flex gap-3 text-center">
-            <h3 className="">Reflection Flag</h3>
-            <span className="flex-grow mb-3 border-b-2 border-blue-100 border-dashed"></span>
-            <span className="font-light">Project with BMW Group</span>
-          </Link>
+          <SimpleLink
+            href="#"
+            title="Grey Cycle: Water Unwasted"
+            description="
+              Recycling and reusing grey water for a more sustainable garden."
+            tags={[
+              "Industrial Design",
+              "CAD",
+              "System Design",
+              "Mapping",
+              "Research",
+            ]}
+          />
+
+          <SimpleLink
+            href="#"
+            title="Energiser Torch Remodel"
+            description="
+              Redesign of an everyday touch for a better hiking experience."
+            tags={["Industrial Design", "CAD", "Materials"]}
+          />
+
+          <SimpleLink
+            href="#"
+            title="KIT: Autonomous Transport System"
+            description="
+              50 year vision of the BNE international and domestic airport."
+            tags={["Industrial Design", "CAD", "System Design", "Future"]}
+          />
+          <SimpleLink
+            href="#"
+            title="Technics SL-1200 Poster"
+            description="
+              Research investigation into technics SL-1200 Series turntable."
+            tags={["Research", "Graphic Design"]}
+          />
         </div>
       </div>
     </main>

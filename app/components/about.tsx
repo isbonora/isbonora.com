@@ -1,29 +1,41 @@
-import Link from "next/link";
+import Link from "next/link";import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+
+
+
 
 export default function About() {
   return (
     <section id="about" className="">
-      <p className="leading-loose tracking-wides text-md font-light">
+      <p className="font-light leading-loose tracking-wides text-md">
         <span className="text-sm uppercase">This is the website</span> of{" "}
         <span className="font-semibold">Isaac Bonora</span>, an{" "}
         <Link
+          className="inline-flex items-center"
           href="https://wikipedia.org/wiki/Industrial_design"
           target="_blank"
         >
-          Industrial Design 🡕
+          Industrial Design{" "}
+          <ArrowUpRightIcon className="w-3 h-" />
         </Link>
         , programmer and graphic artist based in Munich, Germany. I graduated
         with honours in Industrial Design at{" "}
-        <Link href="https://www.qut.edu.au/" target="_blank">
-          Queensland University of Technology 🡕
+        <Link className="inline-flex items-center" href="https://www.qut.edu.au/" target="_blank">
+          Queensland University of Technology{" "}
+          <ArrowUpRightIcon className="w-3 h-" />
         </Link>{" "}
         with a strong interest in solving users’ problems with design thinking.
-        I am currently Interning at <Link href="#">Idealworks 🡕</Link>, a{" "}
-        <Link href="#">BMW Group 🡕</Link> company, applying human-centred design
-        techniques to support teams internally with web-based solutions to
-        improve customer satisfaction.
+        I am currently Interning at{" "}
+        <Link className="inline-flex items-center" href="#">
+          Idealworks <ArrowUpRightIcon className="w-3 h-" />
+        </Link>
+        , a{" "}
+        <Link className="inline-flex items-center" href="#">
+          BMW Group <ArrowUpRightIcon className="w-3 h-" />
+        </Link>{" "}
+        company, applying human-centred design techniques to support teams
+        internally with web-based solutions to improve customer satisfaction.
       </p>
-      <div className="mt-5 grid grid-cols-2 lg:flex lg:flex-wrap gap-4">
+      <div className="grid grid-cols-2 gap-4 mt-5 lg:flex lg:flex-wrap">
         <Link href="#" className="button">
           Instagram
         </Link>
@@ -36,7 +48,8 @@ export default function About() {
         <Link
           href="https://docs.google.com/spreadsheets/d/1r6yXxNRnAWpy8E9hcNJVzMdt4hY5n5QvVtYqNK--Hhw/edit?usp=sharing"
           target="_blank"
-          className="button">
+          className="button"
+        >
           CV
         </Link>
       </div>
