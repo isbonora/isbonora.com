@@ -57,7 +57,7 @@ export default function Home() {
           />
         </section>
 
-        <div className="grid col-span-1 gap-6 lg:grid-cols-3" id="more">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" id="more">
           <h3 className="col-span-3 text-xl font-light text-slate-500">
             Projects
           </h3>

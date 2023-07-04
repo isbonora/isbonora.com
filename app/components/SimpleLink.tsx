@@ -29,7 +29,7 @@ export default function SimpleLink({
   return (
     <Link
       href={href}
-      className="flex flex-col gap-2 px-4 pt-2 pb-4 pr-8 text-black aspect-square bg-slate-100 hover:outline outline-slate-200 hover:text-black hover:no-underline"
+      className="flex flex-col gap-2 px-4 pt-2 pb-4 pr-8 text-black lg:aspect-square bg-slate-100 hover:outline outline-slate-200 hover:text-black hover:no-underline"
     >
       <h3 className="text-lg">{title}</h3>
       {tags && tags.length > 0 && <BuildTagList tags={tags} />}
