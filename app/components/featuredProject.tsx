@@ -28,6 +28,7 @@ export default function FeaturedProject({ alt, src, page, title, description }: 
           alt={alt}
           src={src}
           fill
+          placeholder="blur"
           sizes="(min-width: 808px) 50vw, 100vw"
           style={{
             objectFit: "cover", // cover, contain, none
@@ -36,7 +37,9 @@ export default function FeaturedProject({ alt, src, page, title, description }: 
       </div>
 
       <h2 className="mt-2 text-xl font-light">{title}</h2>
-      <p className="mb-2 text-sm leading-relaxed text-slate-600">{description}</p>
+      <p className="mb-2 text-sm leading-relaxed text-slate-600">
+        {description}
+      </p>
     </Link>
   );
 }
