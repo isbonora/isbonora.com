@@ -37,7 +37,6 @@ export default function Home() {
           ]}
         />
       </Section>
-
       <Image
         alt="hero image of the iwhub by idealworks with the reflection flag attached"
         src={iwhub}
@@ -45,7 +44,6 @@ export default function Home() {
         className="off-width"
         placeholder="blur"
       />
-
       <Section>
         <h3>Introduction</h3>
         <p>
@@ -61,7 +59,6 @@ export default function Home() {
           experience.
         </p>
       </Section>
-
       <InlineSection>
         <p>
           Research identified a need for observers of an AMR to be able to
@@ -86,7 +83,6 @@ export default function Home() {
           </p>
         </div>
       </InlineSection>
-
       <Section>
         <h3>Solution</h3>
         <p>
@@ -121,12 +117,25 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
       </Section>
-
       <Section>
         <h3>Process</h3>
-        <ModelViewer/>
+        <ModelViewer
+          model_path="/projects/reflection_flag_compressed.glb"
+          annotations={[
+            {
+              position: [-0.12, 2.2, -0.7],
+              title: "Mast",
+              body: "The mast is the main body of the device. It houses the LED matrix that reflects the AMR's perception of the user.",
+            },
+            {
+              position: [-0.12, 1.32, -0.7],
+              title: "Handle",
+              body: "The handle provides quick and manual overide in the event of device confusion or failure.",
+            },
+          ]}
+        />
       </Section>
-`
+      `
       {/* `
       <Section className="items-center">
         <Image
@@ -214,7 +223,6 @@ export default function Home() {
           my users problems are.
         </p>
       </Section> */}
-
       <Section>
         <h3>Read More</h3>
         <ExternalLink

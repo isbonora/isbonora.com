@@ -4,7 +4,9 @@
 // TODO: Make optional for mobile. Have a splash screen with a button to load it.
 // TODO: Make annotation content richer. Able images and links.
 // TODO: When one annotation opens, close the others.
-// TODO: Loading splash screen.
+// TODO: enable paremeters to be passed to thie model viewer component.
+//          - arrays for annotations
+//          - model path
 
 import { Canvas } from "@react-three/fiber";
 import {
@@ -18,10 +20,24 @@ import {
 
 import { useState, useEffect, useRef, Suspense } from "react";
 
-export default function ModelViewer() {
+// Define the props that can be passed to the component.
+interface ModelViewerProps {
+  model_path: string;
+  annotations?: AnnotationProps[];
+}
+
+interface AnnotationProps {
+  position: [number, number, number];
+  title: string;
+  body: string;
+}
+
+
+// Main exported function
+export default function ModelViewer({ model_path, annotations }: ModelViewerProps) {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [annotationActive, setAnnotationActive] = useState(false);
-  
+
   const ref = useRef<HTMLDivElement>(null);
 
   // Only load the model when the user scrolls over it.
@@ -63,34 +79,32 @@ export default function ModelViewer() {
           <Suspense fallback={<Loader />}>
             <group position={[0, -1, 0]}>
               <Center top>
-                <LoadedModel />
+                <LoadedModel model_path={model_path} />
               </Center>
 
-              <Annotation
-                position={[-0.12, 2.2, -0.7]}
-                title="Mast"
-                body="The mast is the main body of the device. It houses the LED matrix that reflects the AMR's perception of the user."
-                setAnnotationActive={setAnnotationActive}
-              />
-              <Annotation
-                position={[-0.12, 1.32, -0.7]}
-                title="Handle"
-                body="The handle provides quick and manual overide in the event of device confusion or failure"
-                setAnnotationActive={setAnnotationActive}
-              />
+              {/* Annotations. Loops through provided array of annotations */}
+              {annotations &&
+                annotations.length > 0 && annotations.map((annotation) => (
+                  <Annotation
+                    position={annotation.position}
+                    title={annotation.title}
+                    body={annotation.body}
+                    setAnnotationActive={setAnnotationActive}
+                  />
+                ))}
             </group>
             <OrbitControls
               minPolarAngle={0}
               maxPolarAngle={Math.PI / 2}
               autoRotate={!annotationActive}
-              autoRotateSpeed={1}
+              autoRotateSpeed={0.5}
             />
             <Environment preset="city" />
           </Suspense>
         </Canvas>
       ) : (
         // Shows until the user scrolls over the model view. if the client is a decent computer.
-        
+
         <div className="flex items-center justify-center h-full">
           <div className="text-lg text-center">Tap to load 3D model</div>
         </div>
@@ -100,11 +114,9 @@ export default function ModelViewer() {
 }
 
 // Import model from GLB file
-function LoadedModel() {
-  const gltf = useGLTF("/projects/reflection_flag_compressed.glb");
-  return (
-      <primitive object={gltf.scene} dispose={null} />
-  );
+function LoadedModel({ model_path }: { model_path: string }) {
+  const gltf = useGLTF(model_path);
+  return <primitive object={gltf.scene} dispose={null} />;
 }
 
 // Loading screen
@@ -112,7 +124,9 @@ function Loader() {
   const { active, progress, errors, item, loaded, total } = useProgress();
   return (
     <Html center>
-      <div className="px-4 py-5 text-2xl font-light text-slate-500 animate-pulse">{progress}%</div>
+      <div className="px-4 py-5 text-2xl font-light text-slate-500 animate-pulse">
+        {Math.round(progress)}%
+      </div>
     </Html>
   );
 }
