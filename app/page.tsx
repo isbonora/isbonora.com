@@ -11,7 +11,7 @@ import Header from "@/components/header";
 import About from "@/components/about";
 import FeaturedProject from "@/components/featuredProject";
 
-import SimpleLink from "./components/SimpleLink";
+import MediumLink from "./components/MediumLink";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-4 py-12 lg:py-24">
@@ -57,12 +57,12 @@ export default function Home() {
           />
         </section>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3" id="more">
-          <h3 className="col-span-3 text-xl font-light text-slate-500">
+        <div className="grid gap-6 lg:grid-cols-3" id="more">
+          <h3 className="lg:col-span-3 text-xl font-light text-slate-500">
             Projects
           </h3>
 
-          <SimpleLink
+          <MediumLink
             href="#"
             title="Lazer.Grub"
             description="
@@ -70,7 +70,7 @@ export default function Home() {
             tags={["Rails", "Ruby", "Web Design", "UX"]}
           />
 
-          <SimpleLink
+          <MediumLink
             href="#"
             title="My Life in Music: 2014-2022"
             description="
@@ -79,7 +79,7 @@ export default function Home() {
             tags={["Data", "Visualisation", "Graphic Design", "Python"]}
           />
 
-          <SimpleLink
+          <MediumLink
             href="#"
             title="Grey Cycle: Water Unwasted"
             description="
@@ -93,7 +93,7 @@ export default function Home() {
             ]}
           />
 
-          <SimpleLink
+          <MediumLink
             href="#"
             title="Energiser Torch Remodel"
             description="
@@ -101,14 +101,14 @@ export default function Home() {
             tags={["Industrial Design", "CAD", "Materials"]}
           />
 
-          <SimpleLink
+          <MediumLink
             href="#"
             title="KIT: Autonomous Transport System"
             description="
               50 year vision of the BNE international and domestic airport."
             tags={["Industrial Design", "CAD", "System Design", "Future"]}
           />
-          <SimpleLink
+          <MediumLink
             href="#"
             title="Technics SL-1200 Poster"
             description="
