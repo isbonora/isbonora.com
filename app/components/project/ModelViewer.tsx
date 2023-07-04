@@ -22,6 +22,7 @@ import { useState, useEffect, useRef, Suspense } from "react";
 
 // Define the props that can be passed to the component.
 interface ModelViewerProps {
+  className?: string;
   model_path: string;
   annotations?: AnnotationProps[];
 }
@@ -34,7 +35,7 @@ interface AnnotationProps {
 
 
 // Main exported function
-export default function ModelViewer({ model_path, annotations }: ModelViewerProps) {
+export default function ModelViewer({ className, model_path, annotations }: ModelViewerProps) {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [annotationActive, setAnnotationActive] = useState(false);
 
@@ -68,11 +69,16 @@ export default function ModelViewer({ model_path, annotations }: ModelViewerProp
   return (
     <div
       ref={ref}
-      className="off-width bg-slate-50"
-      style={{
-        height: "80vh",
-      }}
-    >
+      className={className}
+    > 
+    
+      {/* Draws a hint when any annotation is active. */}
+      {annotationActive && (
+        <div className="absolute z-20 text-xs font-light transition opacity-50 bottom-4 text-slate-400 left-4">
+          hint: click the annotation to close
+        </div>
+      )}
+
       {isIntersecting ? (
         <Canvas shadows camera={{ position: [5, 1.5, 5], fov: 25 }}>
           {/* Essentially an await, whilst the model is loaded from the .GLB and the client has to download it. */}

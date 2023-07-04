@@ -120,6 +120,7 @@ export default function Home() {
       <Section>
         <h3>Process</h3>
         <ModelViewer
+          className="off-width bg-slate-50 h-[80vh]"
           model_path="/projects/reflection_flag_compressed.glb"
           annotations={[
             {
