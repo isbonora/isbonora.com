@@ -1,12 +1,13 @@
 "use client";
 
-
 // TODO: Make optional for mobile. Have a splash screen with a button to load it.
 // TODO: Make annotation content richer. Able images and links.
 // TODO: When one annotation opens, close the others.
-// TODO: enable paremeters to be passed to thie model viewer component.
-//          - arrays for annotations
-//          - model path
+// TODO: Split out in to multiple components. (Annotation, Model, Loader)
+// TODO: Investigate model animations.
+// TODO: Add annimiations to the transtions.
+// TODO: Investigate the performance of the model on mobile.
+// TODO: Investigate shadows and lighting.
 
 import { Canvas } from "@react-three/fiber";
 import {
