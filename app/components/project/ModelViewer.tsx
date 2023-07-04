@@ -21,8 +21,6 @@ import { useState, useEffect, useRef, Suspense } from "react";
 export default function ModelViewer() {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [annotationActive, setAnnotationActive] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(true);
   
   const ref = useRef<HTMLDivElement>(null);
 
@@ -59,36 +57,43 @@ export default function ModelViewer() {
         height: "80vh",
       }}
     >
-      {isIntersecting && (
+      {isIntersecting ? (
         <Canvas shadows camera={{ position: [5, 1.5, 5], fov: 25 }}>
-          <group position={[0, -1, 0]}>
-            <Center top>
-              <LoadedModel />
-            </Center>
+          {/* Essentially an await, whilst the model is loaded from the .GLB and the client has to download it. */}
+          <Suspense fallback={<Loader />}>
+            <group position={[0, -1, 0]}>
+              <Center top>
+                <LoadedModel />
+              </Center>
 
-            <Annotation
-              position={[-0.12, 2.2, -0.7]}
-              title="Mast"
-              body="The mast is the main body of the device. It houses the LED matrix that reflects the AMR's perception of the user."
-              setAnnotationActive={setAnnotationActive}
+              <Annotation
+                position={[-0.12, 2.2, -0.7]}
+                title="Mast"
+                body="The mast is the main body of the device. It houses the LED matrix that reflects the AMR's perception of the user."
+                setAnnotationActive={setAnnotationActive}
+              />
+              <Annotation
+                position={[-0.12, 1.32, -0.7]}
+                title="Handle"
+                body="The handle provides quick and manual overide in the event of device confusion or failure"
+                setAnnotationActive={setAnnotationActive}
+              />
+            </group>
+            <OrbitControls
+              minPolarAngle={0}
+              maxPolarAngle={Math.PI / 2}
+              autoRotate={!annotationActive}
+              autoRotateSpeed={1}
             />
-            <Annotation
-              position={[-0.12, 1.32, -0.7]}
-              title="Handle"
-              body="The handle provides quick and manual overide in the event of device confusion or failure"
-              setAnnotationActive={setAnnotationActive}
-            />
-          </group>
-          <OrbitControls
-            minPolarAngle={0}
-            maxPolarAngle={Math.PI / 2}
-            autoRotate={!annotationActive}
-            autoRotateSpeed={1}
-          />
-          <Environment preset="city" />
-          
+            <Environment preset="city" />
+          </Suspense>
         </Canvas>
+      ) : (
+        // Shows until the user scrolls over the model view. if the client is a decent computer.
         
+        <div className="flex items-center justify-center h-full">
+          <div className="text-lg text-center">Tap to load 3D model</div>
+        </div>
       )}
     </div>
   );
@@ -98,15 +103,18 @@ export default function ModelViewer() {
 function LoadedModel() {
   const gltf = useGLTF("/projects/reflection_flag_compressed.glb");
   return (
-    <Suspense fallback={<Loader />}>
       <primitive object={gltf.scene} dispose={null} />
-    </Suspense>
   );
 }
 
+// Loading screen
 function Loader() {
   const { active, progress, errors, item, loaded, total } = useProgress();
-  return <Html center>{progress} % loaded</Html>;
+  return (
+    <Html center>
+      <div className="px-4 py-5 text-2xl font-light text-slate-500 animate-pulse">{progress}%</div>
+    </Html>
+  );
 }
 
 // Create annotation
