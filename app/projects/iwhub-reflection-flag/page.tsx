@@ -111,14 +111,13 @@ export default function Home() {
           </p>
         </div>
         {/* FIXME: #3 Make lazy and include image fallback */}
-        <video autoPlay loop width="1280" height="720">
+        {/* <video autoPlay loop width="1280" height="720">
           <source src="./proxemics.webm" type="video/webm" />
           <source src="./proxemics.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
       </Section>
       <Section>
-        <h3>Process</h3>
         <ModelViewer
           className="off-width bg-slate-50 h-[80vh]"
           model_path="/projects/reflection_flag_compressed.glb"
