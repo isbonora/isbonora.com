@@ -18,9 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div className="sticky top-0 left-0 w-full h-36">
+          <div className="w-full h-full" style={{
+            background: 'linear-gradient(white, transparent)'
+          }}></div>
+        </div>
         {children}
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
