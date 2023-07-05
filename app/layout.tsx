@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="sticky top-0 left-0 w-full h-16 lg:h-36">
           <div className="w-full h-full" style={{
-            background: 'linear-gradient(white , transparent)'
+            background: 'linear-gradient(blue , transparent)'
           }}></div>
         </div>
 
