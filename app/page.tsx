@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-
 import modclave from "@/public/projects/modclaveHero.jpg";
 import dicart from "@/public/projects/dicart_hero.jpg";
 
@@ -14,7 +11,7 @@ import FeaturedProject from "@/components/featuredProject";
 import MediumLink from "./components/MediumLink";
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-4 py-12 lg:py-24">
+    <main className="flex flex-col items-center justify-between min-h-screen p-4 py-8 lg:pb-24">
       <div className="flex flex-col w-full max-w-3xl gap-12">
         <Header />
 
@@ -58,7 +55,7 @@ export default function Home() {
         </section>
 
         <div className="grid gap-6 lg:grid-cols-3" id="more">
-          <h3 className="lg:col-span-3 text-xl font-light text-slate-500">
+          <h3 className="text-xl font-light lg:col-span-3 text-slate-500">
             Projects
           </h3>
 

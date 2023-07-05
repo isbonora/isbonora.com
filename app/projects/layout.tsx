@@ -10,7 +10,7 @@ export default function ProjectLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-0 lg:px-4 py-12 lg:py-24">
+    <main className="flex flex-col items-center justify-between min-h-screen p-4 py-8 lg:pb-24">
       <div className="flex flex-col gap-16 lg:gap-24">
         <Header />
         {children}
