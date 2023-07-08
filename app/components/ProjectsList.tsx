@@ -60,7 +60,7 @@ export default function ProjectList() {
             />
 
             {/* View More. Drops down */}
-            <button type='button' onClick={() => setViewMore(!viewMore)} className="flex gap-2 px-4 pt-2 pb-4 pr-8 cursor-pointer text-black lg:aspect-square bg-slate-100 hover:outline outline-slate-200 hover:text-black hover:no-underline">
+            <button type='button' onClick={() => setViewMore(!viewMore)} className="flex gap-2 px-4 pt-2 pb-16 lg:pb-8 pr-8 cursor-pointer text-black lg:aspect-square bg-gray-100 hover:outline outline-gray-200 hover:text-black hover:no-underline">
               <span className="text-xl">{ viewMore ? 'View Less' : 'View More'}</span>
               { viewMore ? <ArrowSmallUpIcon className="h-6 w-6" /> : <ArrowDownRightIcon className="h-6 w-6" />}
               
