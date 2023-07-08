@@ -10,9 +10,8 @@ import Header from "@/components/header";
 import About from "@/components/about";
 import FeaturedProject from "@/components/featuredProject";
 
-import { ArchiveBoxIcon } from "@heroicons/react/24/outline";
 
-import MediumLink from "./components/MediumLink";
+import ProjectsList from "@/components/ProjectsList";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-4 py-8 lg:pb-24">
@@ -58,61 +57,7 @@ export default function Home() {
             />
           </section>
 
-          <div className="grid gap-6 lg:grid-cols-3" id="more">
-            <MediumLink
-              href="#"
-              title="Lazer.Grub"
-              description="
-              Predecessor to Vector on Rails"
-              tags={["Rails", "Ruby", "Web Design", "UX"]}
-            />
-
-            <MediumLink
-              href="#"
-              title="My Life in Music: 2014-2022"
-              description="
-              Data visualisation of the music I listen to everyday from 2014 to
-              2022"
-              tags={["Data", "Visualisation", "Graphic Design", "Python"]}
-            />
-
-            <MediumLink
-              href="#"
-              title="Grey Cycle: Water Unwasted"
-              description="
-              Recycling and reusing grey water for a more sustainable garden."
-              tags={[
-                "Industrial Design",
-                "CAD",
-                "System Design",
-                "Mapping",
-                "Research",
-              ]}
-            />
-
-            <MediumLink
-              href="#"
-              title="Energiser Torch Remodel"
-              description="
-              Redesign of an everyday touch for a better hiking experience."
-              tags={["Industrial Design", "CAD", "Materials"]}
-            />
-
-            <MediumLink
-              href="#"
-              title="KIT: Autonomous Transport System"
-              description="
-              50 year vision of the BNE international and domestic airport."
-              tags={["Industrial Design", "CAD", "System Design", "Future"]}
-            />
-            <MediumLink
-              href="#"
-              title="Technics SL-1200 Poster"
-              description="
-              Research investigation into technics SL-1200 Series turntable."
-              tags={["Research", "Graphic Design"]}
-            />
-          </div>
+          <ProjectsList />
 
           <div className="flex flex-col gap-1 " id="Archive">
             <h3 className="flex items-end gap-1 px-0.5 pb-2 text-xl font-light lg:col-span-3 text-slate-500">
