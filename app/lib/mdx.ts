@@ -19,10 +19,9 @@ export const getFileBySlug = async (slug: string) => {
 
   const parsedMdx = matter(mdxContent);
 
-  const frontMatter = parsedMdx.data;
-  const content = parsedMdx.content;
-
-
+  // FIXME: Fix types.
+  const frontMatter: Object = parsedMdx.data;
+  const content: Object = parsedMdx.content;
 
   return { content, frontMatter };
 };
