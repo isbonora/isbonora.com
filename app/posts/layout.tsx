@@ -12,9 +12,7 @@ export default function Layout({ children }) {
     <main className="flex min-h-screen flex-col items-center justify-between px-0 lg:px-4 py-12 lg:py-24">
       <div className="flex flex-col gap-16 lg:gap-24">
         <Header />
-        <div className='prose'>
         {children}
-        </div>
       </div>
     </main>
   );

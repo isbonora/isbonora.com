@@ -3,7 +3,11 @@ import { PostType } from "../../types/post";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-import MDXComponents from "../../components/MDXComponents";
+import MDXComponents from "@/components/MDXComponents";
+
+import ProjectInfo from "@/components/project/ProjectInfo";
+import Section from "@/components/project/Section";
+
 import { Suspense } from "react";
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -18,13 +22,26 @@ export default async function Page({ params }: { params: { slug: string } }) {
     return <div>404 - Page not found</div>;
   }
 
-  
-
   return (
-    <div>
-      <h1>{post.frontMatter.title}</h1>
+    <div className='prose'>
+      <Section>
+        <h1>{post.frontMatter.title}</h1>
+        <p className="lead">
+          {post.frontMatter.subtitle}
+        </p>
+        <ProjectInfo
+          clientName={post.frontMatter.client}
+          bodyText={post.frontMatter.description}
+          datePeriod={post.frontMatter.year}
+          tags={post.frontMatter.tags}
+        />
+      </Section>
+
       <Suspense fallback={<div>Loading...</div>}>
-        <MDXRemote source={post.content} components={{...MDXComponents, ...{}}} />
+        <MDXRemote
+          source={post.content}
+          components={{ ...MDXComponents, ...{} }}
+        />
       </Suspense>
     </div>
   );
