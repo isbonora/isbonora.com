@@ -11,7 +11,7 @@ export default function ProjectList() {
   const [viewMore, setViewMore] = useState(false);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-3" id="more">
+    <div className="grid gap-6 grid-cols-2 lg:grid-cols-3" id="more">
             <MediumLink
               href="#"
               title="Lazer.Grub"

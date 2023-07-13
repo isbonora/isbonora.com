@@ -57,36 +57,6 @@ export default function Home() {
           </section>
 
           <ProjectsList />
-
-          <div className="flex flex-col gap-1 " id="Archive">
-            <h3 className="flex items-end gap-1 px-0.5 pb-2 text-xl font-light lg:col-span-3 text-slate-500">
-              Archive
-            </h3>
-            <Link
-              href="#"
-              className="flex justify-between gap-6 px-0.5 py-1 group text-slate-600 hover:no-underline hover:outline outline-slate-300 hover:text-slate-600"
-            >
-              <span>Street Sew: Sewing Kit for the Homeless</span>
-              <span className="flex-grow mb-3 border-b-2 border-slate-300 "></span>
-              <span>2022</span>
-            </Link>
-            <Link
-              href="#"
-              className="flex justify-between gap-6 px-0.5 py-1 group text-slate-600 hover:no-underline hover:outline outline-slate-300 hover:text-slate-600"
-            >
-              <span>Street Sew: Sewing Kit for the Homeless</span>
-              <span className="flex-grow mb-3 border-b-2 border-slate-300 "></span>
-              <span>2022</span>
-            </Link>
-            <Link
-              href="#"
-              className="flex justify-between gap-6 px-0.5 py-1 group text-slate-600 hover:no-underline hover:outline outline-slate-300 hover:text-slate-600"
-            >
-              <span>Street Sew: Sewing Kit for the Homeless</span>
-              <span className="flex-grow mb-3 border-b-2 border-slate-300 "></span>
-              <span>2022</span>
-            </Link>
-          </div>
         </div>
       </div>
     </main>
