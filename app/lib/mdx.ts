@@ -4,13 +4,14 @@ import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import sectionize from 'remark-sectionize'
 import MDXComponents from "@/components/MDXComponents";
+import { FrontMatterType } from "app/types/post";
 
 const postContent = "content";
 
 const root = process.cwd();
 
 export const getFiles = async () => {
-  return fs.readdirSync(path.join(root, postContent));
+  return fs.readdirSync(path.join(root, "app", postContent));
 };
 
 
@@ -43,3 +44,21 @@ export const getFileBySlug = async (slug: string) => {
   });
   return { content, frontmatter };
 };
+
+// export const getSortedPosts = async () => {
+//   const files = await getFiles();
+
+//   const posts = await Promise.all(
+//     files.map(async (file) => {
+//       const slug = file.replace(".mdx", "");
+
+//       const { frontmatter } = await getFileBySlug(slug);
+
+//       return { slug, frontmatter }
+//     })
+//   );
+//   console.log(posts);
+//   return posts.sort(
+//     (a, b) => Number(new Date(b.frontmatter.date)) - Number(new Date(a.frontmatter.date))
+//   ) as { slug: string; frontmatter: { [key: string]: string } }[];
+// };

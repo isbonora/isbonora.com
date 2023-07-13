@@ -4,7 +4,7 @@ export interface FrontMatterType {
     title: string;
     subtitle: string;
     //For project info block.
-    year: string;
+    date: string;
     tags: string[];
     client: string;
     description: string;
