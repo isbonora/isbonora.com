@@ -16,7 +16,7 @@ export interface PostType {
     // MDX content -> is just a big string.
     content: string;
     // FrontMatter.
-    frontMatter: FrontMatterType;
+    frontmatter: FrontMatterType;
 
     // Slug wasn't found.
     notFound?: boolean;

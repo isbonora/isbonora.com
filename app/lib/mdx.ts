@@ -1,10 +1,9 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
 
-
-import { PostType } from "../types/post";
+import { compileMDX } from "next-mdx-remote/rsc";
+import sectionize from 'remark-sectionize'
+import MDXComponents from "@/components/MDXComponents";
 
 const postContent = "content";
 
@@ -14,17 +13,34 @@ export const getFiles = async () => {
   return fs.readdirSync(path.join(root, postContent));
 };
 
+
+// Get file by their slug.
 export const getFileBySlug = async (slug: string) => {
+  // Read the MDX file from file system.
   const mdxContent = fs.readFileSync(
     path.join(root, "app", postContent, `${slug}.mdx`),
     "utf-8"
   );
+  
 
-  const parsedMdx = matter(mdxContent);
+  // Compile MDX to JSX.
+  // This is the main part of the code.
+  // This will generate the JSX HTML code that will be displayed.
+  // Includes, components and any rehype/remark plugins as shown.
+  const { frontmatter, content } = await compileMDX({
+    source: mdxContent,
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        remarkPlugins: [
+          sectionize,
+        ],
+      },
+    },
+    components: {
+      ...MDXComponents,
+    },
+  });
 
-  // FIXME: Fix types.
-  const frontMatter: Object = parsedMdx.data;
-  const content: string = parsedMdx.content;
-
-  return { content, frontMatter } as PostType;
+  return { content, frontmatter };
 };

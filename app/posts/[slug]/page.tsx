@@ -1,47 +1,41 @@
 import { getFileBySlug } from "../../lib/mdx";
 import { PostType } from "../../types/post";
-
-import { MDXRemote } from "next-mdx-remote/rsc";
-
-import MDXComponents from "@/components/MDXComponents";
-
 import ProjectInfo from "@/components/project/ProjectInfo";
-import Section from "@/components/project/Section";
 
 import { Suspense } from "react";
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const post = (await getPost(params.slug)) as PostType;
+import "@/styles/project.css";
 
-  if (!post) {
+export default async function Page({ params }: { params: { slug: string } }) {
+  const {content, frontmatter, notFound} = (await getPost(params.slug)) as PostType;
+
+  // TODO: Redirect to a 404 page. Not just a return
+  if (notFound) {
+    return <div className='project-body px-auto'>404 - Page not found</div>;
+  }
+
+  // Test if content is ready. If not, show a loading indicator.
+  if (!content) {
     return <div>loading...</div>;
   }
 
-  // TODO: Redirect to a 404 page. Not just a return
-  if (post.notFound) {
-    return <div>404 - Page not found</div>;
-  }
-
   return (
-    <div className='prose'>
-      <Section>
-        <h1>{post.frontMatter.title}</h1>
-        <p className="lead">
-          {post.frontMatter.subtitle}
-        </p>
+    <div className="prose project-body">
+      {/* Header */}
+      <section>
+        <h1>{frontmatter.title}</h1>
+        <p className="lead">{frontmatter.subtitle}</p>
         <ProjectInfo
-          clientName={post.frontMatter.client}
-          bodyText={post.frontMatter.description}
-          datePeriod={post.frontMatter.year}
-          tags={post.frontMatter.tags}
+          clientName={frontmatter.client}
+          bodyText={frontmatter.description}
+          datePeriod={frontmatter.year}
+          tags={frontmatter.tags}
         />
-      </Section>
+      </section>
 
+      {/* Content from MDX */}
       <Suspense fallback={<div>Loading...</div>}>
-        <MDXRemote
-          source={post.content}
-          components={{ ...MDXComponents, ...{} }}
-        />
+        {content}
       </Suspense>
     </div>
   );
@@ -49,8 +43,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
 // See example repo here: https://github.dev/MaximeHeckel/blog.maximeheckel.com
 async function getPost(slug: string) {
   try {
-    // TODO: Add a type for this 'post' object
-
     const post = await getFileBySlug(slug);
     return { ...post };
   } catch (e) {
