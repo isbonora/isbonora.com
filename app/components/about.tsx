@@ -14,7 +14,7 @@ export default function About() {
           href="https://wikipedia.org/wiki/Industrial_design"
           target="_blank"
         >
-          Industrial Design{" "}
+          Industrial Designer{" "}
           <ArrowUpRightIcon className="w-3 h-" />
         </Link>
         , programmer and graphic artist based in Munich, Germany. I graduated
