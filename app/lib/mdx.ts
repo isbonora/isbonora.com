@@ -3,6 +3,9 @@ import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 
+
+import { PostType } from "../types/post";
+
 const postContent = "content";
 
 const root = process.cwd();
@@ -21,7 +24,7 @@ export const getFileBySlug = async (slug: string) => {
 
   // FIXME: Fix types.
   const frontMatter: Object = parsedMdx.data;
-  const content: Object = parsedMdx.content;
+  const content: string = parsedMdx.content;
 
-  return { content, frontMatter };
+  return { content, frontMatter } as PostType;
 };
