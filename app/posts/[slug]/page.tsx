@@ -5,13 +5,13 @@ import ProjectInfo from "@/components/project/ProjectInfo";
 import { Suspense } from "react";
 
 import "@/styles/project.css";
+import { notFound } from 'next/navigation'
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const {content, frontmatter, notFound} = (await getPost(params.slug)) as PostType;
+  const {content, frontmatter, slugNotFound} = (await getPost(params.slug)) as PostType;
 
-  // TODO: Redirect to a 404 page. Not just a return
-  if (notFound) {
-    return <div className='project-body px-auto'>404 - Page not found</div>;
+  if (slugNotFound) {
+    notFound()
   }
 
   // Test if content is ready. If not, show a loading indicator.
@@ -47,6 +47,6 @@ async function getPost(slug: string) {
     return { ...post };
   } catch (e) {
     console.error(e);
-    return { notFound: true };
+    return { slugNotFound: true };
   }
 }

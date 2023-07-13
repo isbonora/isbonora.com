@@ -19,5 +19,5 @@ export interface PostType {
     frontmatter: FrontMatterType;
 
     // Slug wasn't found.
-    notFound?: boolean;
+    slugNotFound?: boolean;
   }
