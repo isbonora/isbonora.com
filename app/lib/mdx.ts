@@ -21,7 +21,7 @@ export const getFileBySlug = async (slug: string) => {
     path.join(root, "app", postContent, `${slug}.mdx`),
     "utf-8"
   );
-  
+
 
   // Compile MDX to JSX.
   // This is the main part of the code.
@@ -41,6 +41,5 @@ export const getFileBySlug = async (slug: string) => {
       ...MDXComponents,
     },
   });
-
   return { content, frontmatter };
 };

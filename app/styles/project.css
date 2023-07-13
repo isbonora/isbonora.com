@@ -69,15 +69,15 @@ section > .lead {
 }
 
 section > h1 {
-  @apply px-2 lg:px-0;
+  @apply px-2 lg:px-0 pt-12;
 }
 
 section > h2 {
-  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2 px-2 lg:px-0;
+  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2 px-2 lg:px-0 pt-12;
 }
 
 section > h3 {
-  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2 px-2 lg:px-0;
+  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2 px-2 lg:px-0 pt-12;
 }
 
 section > .caption {
