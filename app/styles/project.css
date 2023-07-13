@@ -39,7 +39,7 @@ p {
 }
 
 .section > h1 {
-  @apply  px-2 lg:px-0;
+  @apply px-2 lg:px-0;
 }
 
 .section > h2 {
@@ -51,5 +51,35 @@ p {
 }
 
 .section > .caption {
+  @apply text-xs font-light text-slate-500 max-w-md leading-loose px-2 lg:px-0;
+}
+
+
+/* Define section styles */
+section {
+  @apply flex flex-col gap-3;
+}
+
+section > p {
+  @apply leading-loose pb-4 px-2 lg:px-0;
+}
+
+section > .lead {
+  @apply text-base lg:text-xl font-light text-slate-500 leading-relaxed px-2 lg:px-0;
+}
+
+section > h1 {
+  @apply px-2 lg:px-0 pt-12;
+}
+
+section > h2 {
+  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2 px-2 lg:px-0 pt-12;
+}
+
+section > h3 {
+  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2 px-2 lg:px-0 pt-12;
+}
+
+section > .caption {
   @apply text-xs font-light text-slate-500 max-w-md leading-loose px-2 lg:px-0;
 }
