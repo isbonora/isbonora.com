@@ -1,0 +1,98 @@
+---
+title: Vector on Rails
+subtitle: >-
+  Rethinking how we process manufacturing jobs at Vector Etch
+
+# FrontMatter
+client: Vector Etch
+description: >-
+  Rethinking how we process manufacturing jobs at Vector Etch. This project was started in 2020 and is still in maintained today by myself. It is a full-stack web application built on Ruby on Rails. It is used daily by Vector Etch staff to process orders and manage stock. It is a critical part of Vector Etch's operations and has saved hundreds of work hours since it's inception.
+date: 2022-07-19T14:00:00Z
+tags:
+  [
+    Human Cetered Design,
+    User Experience,
+    Web Development,
+    Ruby on Rails,
+    Full-stack Development,
+  ]
+---
+
+# Introduction
+
+_Vector on Rails (VoR)_ is the next evolution of the internal tools we have come to use daily at Vector Etch. Superseding the LazerGrub platform (which you can read [here](/projects/lazer-grub-vector-etch/ "LazerGrub blog post")), VoR builds upon what was learnt during the development of LazerGrub and gives our staff effective methods of order and stock management to reduce costs and offer a higher quality service to our customers. The VoR application is built upon [Ruby on Rails](https://rubyonrails.org/ "ruby on rails website") (Rails) which offers an extensive full-stack framework, that is opinionated forcing a clear structure and uniform understanding of the code base. It features in the box enable a rich set of functions that our tooling required from database schemas to asynchronous jobs to process user submitted files for machine learning analysis.
+
+<Video
+  webm="/posts/rails-use-small720.webm"
+  mp4="/posts/rails-use-small720.mp4"
+  title='A video showing the use of the Vector on Rails platform. The video shows the user uploading a file, the file being processed and then the user being presented with the results of the analysis.'
+/>
+
+## Need
+
+As discussed in the previous post on [LazerGrub](https://isbonora.com/projects/lazer-grub-vector-etch/ "lazer grub blog post"), Vector Etch's existing processes were detailed and well structured but relied heavily on Google's [Docs ](https://www.google.com.au/docs/about/ "google docs")and [Sheets](https://www.google.com.au/sheets/about/ "Sheets"). This reliance meant that not only there was a vendor lock-in, but that also historical data was not was easily retrievable, or impossible, due to limitations of Sheets. The quotation process often involved repetitive data entry and custom Sheets macros that were often breaking. this lead to staff unhappiness and customer frustration during busier periods as we chased demand. My [previous role](https://docs.google.com/spreadsheets/d/1r6yXxNRnAWpy8E9hcNJVzMdt4hY5n5QvVtYqNK--Hhw/edit?usp=sharing "Isaac bonora's CV") to Vector Etch, had opened to me to the idea of custom developed web platforms to improve internal processes and I had thought that we could do the same, solving many of the issues I saw in the current practice.
+
+My first stab at solving the issues outlined, produced LazerGrub. A [Vue.js](https://vuejs.org/ "Vue js") platform that incorporated several services to support business logic and database management. LazerGrub was great compared to our previous methods, and had visibly improved our order completion times which then opened up more time for special projects and other activities that could improve the business. People were happy but as the project expanded into more areas of the business and attempted to do more things, I as the developer began to run in to roadblocks. The software stack I had gone with was very focused on only doing a few things perfect but as the project expanded and we wanted to start handling files, sending emails and running analysis in asynchronous jobs, my own lack of skills in these areas began to show and development slowed as I tried to roll my own file handlers and job modules. The [Github](https://github.com/ "Github") code repository itself then became a mish-mash of file structures, naming conventions and quality. This led me to rethinking the project now that I had a greater understanding of the objectives.
+
+My main goals when rethinking the project was to simplify the development process as much as possible. So that new functions could be slotted in easily without disturbing other parts of the platform. One method of simplification was to use a full-stack framework that enforced structure with well-thought out opinions on how things should be done. Full-stack frameworks come in many shapes and languages, examples include:
+
+- [Django](https://www.djangoproject.com/ "Django Project"), written in Python powering websites like Instagram.
+- Ruby on Rails, written in Ruby. Used by Shopify and Github.
+- [Meteor](https://www.meteor.com/ "Meteor JS"), written in JavaScript.
+- [Laravel](https://laravel.com/ "Laravel"), written in PHP.
+
+While I had experience with Python and Django to some extent, Django's offering still lacked some of the tooling we required out of the box for the features we wanted. Meteor and Laravel were out of the question as I had tried those languages and wasn't confident in my skills to develop them in a large project like this. Which then led me to Ruby on Rails (Rails) and it's language Ruby. Rails promised all the tooling we needed, and Ruby offered ideals of ["simplicity and productivity"](https://www.ruby-lang.org/en/) and both were often cited as being built for ["developer satisfaction"](https://nikodunk.com/a-node-js-developer-discovers-rails/#happiness). Thus the choice was made to go with Rails and away I went learning the basics of Ruby in a few example projects to get my bearings. With the prior knowledge of LazerGrub, a plan was made early on with great clarity to help guide the development process.
+
+One of the key deciding features of Rails that has now become valuable to our process is it's [ActiveJobs](https://guides.rubyonrails.org/active_job_basics.html "ActiveJob basic, how to") module. A framework to run snippets of code asynchronously to the main app for business logic such as syncing with our WordPress Ecommerce sites or running file analysis for quicker proofing of customer files. While simple, this module has become much more important to the smooth operation of our quotes and future goal of providing estimates to our customers without our staff attention.
+
+## Features
+
+As I continue to develop this project today (as of July 2022) our objectives continually grow as we see the project successfully expand in to each part of our business. The below list outlines a few of the existing features and highlights future opportunities.
+
+### Existing
+
+An overview of the features that VoR currently offers include:
+
+- Proofing and Quoting customers on customer vector files.
+- Template Job Processing (see [previous post](https://isbonora.com/projects/lazer-grub-vector-etch/#templates "Templates") for more information).
+- User management.
+- Stock management following decreases and increases in stock levels based on usage from orders and inwards from Purchase Orders.
+- Product management, including pricing models, image assets and lasers data.
+- Recut management, so that we may understand where issues arise with our processes causing the need to recut. This informs future policy and processes.
+- Checkoff/Quality Control processes.
+- Laser Slip Sheets.
+
+You may read about examples of these modules in the LazerGrub post as many do reflect it's methodology and function with small detail changes.
+
+### Objectives
+
+As of the time of writing, I am currently in the process of building out the customer facing side of VoR described as _Vector Former_. The aim of this initiative is to replace the basic quote form we have now and enable an rich user experience that can include the user in on the process that is often hidden behind opaque processes we currently have.
+
+Quotes from the project brief:
+
+> Currently the Quoting process is hidden behind closed doors to the customer. This system, of taking a file, doing some **_magic_** and giving a number back can be disorientating to an end user. By reiterating why a certain file may be wrong, and how to fix it - but without actually showing the tangible **_why_** it needs to be like that, a customer can become frustrated and confused. They've followed the setup guides, they may have even had it cut before with us or someone else. Then why is it only now not working? Processes change daily and between staff; how someone is feeling on a given day can require more changes from a customer or less. This is what causes headaches for our customers. People need definitive answers, not a "_I know it was okay last week, but we need it fixed this time, sorry."._
+
+> Vector Former, aims to solve these issues through the concept of _radical transparency_. By letting the customer finish off and prep that file, they've handcrafted, for our lasers themselves. With a modern interface displaying real-time feedback with potential changes and best practices. The customer can be rest assured that they've not only done the right thing but that we'll also manufacture to their creative vision.
+
+## Today
+
+Currently I am in the process of building out the back end technologies required to proof a customers file and process statistics that we can use to offer estimates and suggestions. Recently this has included the inclusion of machine learning models to estimate the time it takes for a given file to cut so that we don't have to rely on obscure industry software, that doesn't offer APIs to generate the times required for our quote values.
+
+![](/posts/screenshot-2022-07-22-at-15-14-52-vector-on-rails.png)
+
+A working MVP of the interface, used internally, looks like this where all the styles found in the file are presented and drop downs are available encase you're not using the default required colours for say a cutting line in your own file.
+
+![](/posts/screenshot-2022-07-22-151809.png)
+
+Notices show the warnings and errors a file has. In this example, some of the shapes have invalid opacities. This is often a problem that can be frustrating for staff to solve as even a shape with the opacity of 99.999% can cause the laser control software to fail. Catching this information as early as possible in the quotation process allows us to free up time that could otherwise be used elsewhere more effectively than solving annoying problems.
+
+Metadata section in the case is used internally to validate the information we extract from a customer supplied file to catch any discrepancies during the development process. In this example we can see that the predicted laser time is within 4 minutes of the actual time supplied by the quoting staff member. This represents a $12ish dollar delta, and is typically the greatest distance from actual time our predictions have been. Our goals is to ultimately give our users greater expectations on the costs involved with laser cutting, so providing ranges of costs will be a valuable function of the initiative.
+
+## Value
+
+The value this project has supplied to Vector Etch is immeasurable. Not just because our old processes gave little historical insight but because it has changed the way we work significantly on a daily basis that it is hard for us to believe we did it any other way. My estimations find that we are saving close to **35%** of our time on average with quotes and upwards of **50%** of our time with other types of orders. This is obliviously a significant saving for the business and it's staff. Saving hundreds of work hours since the inception of LazerGrub and VoR 2 years ago.
+
+# Conclusion
+
+While it is hard to capture this project's scope, especially as it expands rapidly to this day, the VoR intervention is critical to Vector Etch's continued success and this discussion hopes to capture just a portion of that. While I continue to develop this project today, my appreciation for good design in not only digital applications but also physical objects and space has grown immeasurably as I have grown greater understanding of the scale things can have behind closed doors. My future goal of VoR is to open-source modules I have developed as a part of it as I believe it is important to share ones efforts and add to the conversation in a meaningful way.
+

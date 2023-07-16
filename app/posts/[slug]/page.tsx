@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="prose project-body">
+    <div className="project-body">
       {/* Header */}
       <section>
         <h1>{frontmatter.title}</h1>
@@ -39,9 +39,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
           tags={frontmatter.tags}
         />
       </section>
-
-      {/* Content from MDX */}
-      <Suspense fallback={<div>Loading...</div>}>{content}</Suspense>
+      <article className="">
+        {/* Content from MDX */}
+        <Suspense fallback={<div>Loading...</div>}>{content}</Suspense>
+      </article>
     </div>
   );
 }

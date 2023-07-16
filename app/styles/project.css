@@ -83,3 +83,11 @@ section > h3 {
 section > .caption {
   @apply text-xs font-light text-slate-500 max-w-md leading-loose px-2 lg:px-0;
 }
+
+section > blockquote {
+  @apply text-xl lg:text-2xl font-light text-slate-500 mb-2 px-2 pt-0   border-l-4 border-slate-500 lg:pl-6 lg:ml-6;
+}
+
+section > ul {
+  @apply list-disc list-outside flex flex-col gap-1 px-2 lg:px-6 pb-6;
+}

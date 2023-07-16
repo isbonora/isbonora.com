@@ -50,7 +50,7 @@ export default function Home() {
             <FeaturedProject
               alt="Vector on Rails"
               src={vector_on_rails}
-              page="/projects/vector-on-rails-vectoretch-erp"
+              page="/posts/vector-on-rails-web-design-vectoretch"
               title="Vector on Rails"
               description="Software development project for Vector Etch. Design and developing a order, stock and customer management system."
             />

@@ -23,6 +23,7 @@ const ResponsiveImage = (props: { src: string; alt: string }) => (
 // Dynamic Imports. These components are not used on every page
 const ModelViewer = dynamic(() => import("@/components/project/ModelViewer"));
 const Youtube = dynamic(() => import("@/components/project/Youtube"));
+const Video = dynamic(() => import("@/components/project/Video"));
 
 // Dynamically import components here
 const CustomComponents = {
@@ -32,7 +33,8 @@ const CustomComponents = {
   Section,
   // Widgets
   ModelViewer,
-  Youtube
+  Youtube,
+  Video
 };
 
 // Define MDX compatible components here
