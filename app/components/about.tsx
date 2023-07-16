@@ -1,7 +1,5 @@
-import Link from "next/link";import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
-
-
-
+import Link from "next/link";
+import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
 export default function About() {
   return (
@@ -14,12 +12,15 @@ export default function About() {
           href="https://wikipedia.org/wiki/Industrial_design"
           target="_blank"
         >
-          Industrial Designer{" "}
-          <ArrowUpRightIcon className="w-3 h-" />
+          Industrial Designer <ArrowUpRightIcon className="w-3 h-" />
         </Link>
         , programmer and graphic artist based in Munich, Germany. I graduated
         with honours in Industrial Design at{" "}
-        <Link className="inline-flex items-center" href="https://www.qut.edu.au/" target="_blank">
+        <Link
+          className="inline-flex items-center"
+          href="https://www.qut.edu.au/"
+          target="_blank"
+        >
           Queensland University of Technology{" "}
           <ArrowUpRightIcon className="w-3 h-" />
         </Link>{" "}
