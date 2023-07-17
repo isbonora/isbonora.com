@@ -9,13 +9,21 @@ import Header from "@/components/header";
 import About from "@/components/about";
 import FeaturedProject from "@/components/featuredProject";
 
-
 import ProjectsList from "@/components/ProjectsList";
+import Banner from "./components/header/banner";
 export default function Home() {
+  const env = process.env.NODE_ENV;
+
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-4 py-8 lg:pb-24">
       <div className="flex flex-col w-full max-w-3xl gap-12">
-        <Header />
+
+        {/* Show construction banner whilst this site is still being build */}
+        {/* TODO: remove when done. */}
+        <div className="flex flex-col gap-4">
+          {env === "production" ? <Banner /> : ""}
+          <Header />
+        </div>
 
         <About />
         <div className="flex flex-col gap-6">
