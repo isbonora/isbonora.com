@@ -37,7 +37,7 @@ export default function Home() {
             <FeaturedProject
               alt="modClave"
               src={modclave}
-              page="/projects/modclave-store-and-sterilise"
+              page="/posts/modclave-store-and-sterilise"
               title="modClave: Store & Sterilise"
               description="The modClave is a modular sterilisation desktop appliance that supports small-to-medium-sized medical practices by reprocessing medical instruments along side patient care."
             />

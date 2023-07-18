@@ -1,8 +1,10 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 
 import ExternalLink from "@/components/project/ExternalLink";
 import InlineSection from "@/components/project/InlineSection";
+import InlineSectionItem from "@/components/project/InlineSectionItem";
 import Section from "@/components/project/Section";
 
 import type { MDXComponents } from "mdx/types";
@@ -24,6 +26,7 @@ const ResponsiveImage = (props: { src: string; alt: string }) => (
 const ModelViewer = dynamic(() => import("@/components/project/ModelViewer"));
 const Youtube = dynamic(() => import("@/components/project/Youtube"));
 const Video = dynamic(() => import("@/components/project/Video"));
+const ImageWithCaption = dynamic(() => import("@/components/project/ImageWithCaption"));
 
 // Dynamically import components here
 const CustomComponents = {
@@ -31,10 +34,14 @@ const CustomComponents = {
   ExternalLink,
   InlineSection,
   Section,
+  Link,
+  Image,
   // Widgets
   ModelViewer,
   Youtube,
-  Video
+  Video,
+  InlineSectionItem,
+  ImageWithCaption,
 };
 
 // Define MDX compatible components here
