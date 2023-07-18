@@ -52,7 +52,6 @@ async function getPost(slug: string) {
     const post = await getFileBySlug(slug);
     return { ...post };
   } catch (e) {
-    console.error(e);
     return { slugNotFound: true };
   }
 }
