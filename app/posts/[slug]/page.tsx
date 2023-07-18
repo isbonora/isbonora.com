@@ -1,6 +1,6 @@
 import { getFileBySlug } from "../../lib/mdx";
 import { PostType } from "../../types/post";
-import ProjectInfo from "@/components/project/ProjectInfo";
+import ProjectInfo from "@/public/posts/project/ProjectInfo";
 import { notFound } from "next/navigation";
 
 import { Suspense } from "react";
