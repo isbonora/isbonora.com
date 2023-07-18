@@ -51,7 +51,7 @@ export default function Home() {
             <FeaturedProject
               alt="iwhub"
               src={iwhub}
-              page="/projects/iwhub-reflection-flag"
+              page="/posts/iwhub-reflection-flag"
               title="iw.hub: Reflection Flag"
               description="A project with BMW Group"
             />
