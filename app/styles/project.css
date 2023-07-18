@@ -24,6 +24,8 @@ p {
   @apply max-w-3xl w-full flex flex-col gap-16 lg:gap-24 leading-loose;
 }
 
+/* TODO: Consolidate in to a cleaner style thats not all over the place */
+
 /* Define section styles */
 
 .section {
@@ -90,4 +92,8 @@ section > blockquote {
 
 section > ul {
   @apply list-disc list-outside flex flex-col gap-1 px-2 lg:px-6 pb-6;
+}
+
+article > p {
+  @apply leading-loose pb-4 px-2 lg:px-0;
 }
