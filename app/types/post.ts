@@ -8,6 +8,10 @@ export interface FrontMatterType {
     tags: string[];
     client: string;
     description: string;
+    // If a post is featured, it won't be displayed in the standard list of posts.
+    // It's assumed that it shows in the top 4 posts, that are done manually.
+    // TODO: Make featured posts dynamic.
+    featured?: boolean;
   }
 
 // Post Type

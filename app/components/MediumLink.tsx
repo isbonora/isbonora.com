@@ -5,7 +5,7 @@ function BuildTagList({ tags }: { tags: string[] }) {
     <div className="flex flex-wrap gap-2 text-xs" id="tag-list">
       {/* Slice limits returned values */}
       {/* Doesn't count from 0. weird */}
-      {tags.slice(0, 4).map((tag) => (
+      {tags.slice(0, 3).map((tag) => (
         <span
           key={tag}
           className="px-2 text-slate-500 text-xs bg-slate-200 py-0.5"

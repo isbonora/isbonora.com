@@ -1,113 +1,41 @@
-"use client";
-
 import MediumLink from "@/components/MediumLink";
+import { getSortedPosts } from "app/lib/mdx";
 
-import {
-  ArrowDownRightIcon,
-  ArrowSmallUpIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
 
-import { useState } from "react";
-
-export default function ProjectList() {
+export default async function ProjectList() {
   // Toggle view more state
-  const [viewMore, setViewMore] = useState(false);
+  const posts = await getSortedPosts();
+
+  // Exclude featured projects from posts list
+  const otherPosts = posts.filter((post) => {
+    return !post.frontmatter.featured;
+  });
 
   return (
     <div className="grid gap-6 grid-cols-2 lg:grid-cols-3" id="more">
-      <MediumLink
-        href="#"
-        title="Lazer.Grub"
-        description="
-              Predecessor to Vector on Rails"
-        tags={["Rails", "Ruby", "Web Design", "UX"]}
-      />
+      {/* Iterate over top 5 latest, unfeatured, posts */}
 
-      <MediumLink
-        href="#"
-        title="My Life in Music: 2014-2022"
-        description="
-              Data visualisation of the music I listen to everyday from 2014 to
-              2022"
-        tags={["Data", "Visualisation", "Graphic Design", "Python"]}
-      />
+      {otherPosts.slice(0, 5).map((post) => (
+        <MediumLink
+          key={post.slug}
+          href={`/posts/` + post.slug}
+          title={post.frontmatter.title}
+          description={post.frontmatter.subtitle.slice(0, 75) + "..."}
+          tags={post.frontmatter.tags}
+        />
+      ))}
 
-      <MediumLink
-        href="#"
-        title="Grey Cycle: Water Unwasted"
-        description="
-              Recycling and reusing grey water for a more sustainable garden."
-        tags={[
-          "Industrial Design",
-          "CAD",
-          "System Design",
-          "Mapping",
-          "Research",
-        ]}
-      />
-
-      <MediumLink
-        href="#"
-        title="Energiser Torch Remodel"
-        description="
-              Redesign of an everyday touch for a better hiking experience."
-        tags={["Industrial Design", "CAD", "Materials"]}
-      />
-
-      <MediumLink
-        href="#"
-        title="KIT: Autonomous Transport System"
-        description="
-              50 year vision of the BNE international and domestic airport."
-        tags={["Industrial Design", "CAD", "System Design", "Future"]}
-      />
-
-      {/* View More. Drops down */}
-      <button
-        type="button"
-        onClick={() => setViewMore(!viewMore)}
-        className="flex gap-2 px-4 pt-2 pb-16 lg:pb-8 pr-8 cursor-pointer text-black lg:aspect-square bg-gray-100 hover:outline outline-gray-200 hover:text-black hover:no-underline"
-      >
-        <span className="text-xl">{viewMore ? "View Less" : "View More"}</span>
-        {viewMore ? (
-          <ArrowSmallUpIcon className="h-6 w-6" />
-        ) : (
+      {/* View More shows when 5 posts already exists */}
+      {otherPosts.length > 5 && (
+        <a
+          href="/posts"
+          type="button"
+          className="flex gap-2 px-4 pt-2 pb-16 lg:pb-8 pr-8 cursor-pointer text-black lg:aspect-square bg-gray-100 hover:outline outline-gray-200 hover:text-black hover:no-underline"
+        >
+          <span className="text-xl">View More</span>
           <ArrowDownRightIcon className="h-6 w-6" />
-        )}
-      </button>
-
-      {viewMore && (
-        <div className="grid gap-6 lg:grid-cols-3 lg:col-span-3 col-span-2 grid-cols-2">
-          <MediumLink
-            href="#"
-            title="Grey Cycle: Water Unwasted"
-            description="
-              Recycling and reusing grey water for a more sustainable garden."
-            tags={[
-              "Industrial Design",
-              "CAD",
-              "System Design",
-              "Mapping",
-              "Research",
-            ]}
-          />
-
-          <MediumLink
-            href="#"
-            title="Energiser Torch Remodel"
-            description="
-              Redesign of an everyday touch for a better hiking experience."
-            tags={["Industrial Design", "CAD", "Materials"]}
-          />
-
-          <MediumLink
-            href="#"
-            title="KIT: Autonomous Transport System"
-            description="
-              50 year vision of the BNE international and domestic airport."
-            tags={["Industrial Design", "CAD", "System Design", "Future"]}
-          />
-        </div>
+        </a>
       )}
     </div>
   );
