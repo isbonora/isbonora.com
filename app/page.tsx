@@ -1,7 +1,6 @@
-import Link from "next/link";
-import modclave from "@/public/projects/modclaveHero.jpg";
-import dicart from "@/public/projects/dicart_hero.jpg";
 
+import modclave from "@/public/posts/modclave_hero_square.jpeg";
+import dicart from "@/public/projects/dicart_hero.jpg";
 import iwhub from "@/public/projects/iwhub_hero.jpg";
 import vector_on_rails from "@/public/projects/vector_on_rails.png";
 
