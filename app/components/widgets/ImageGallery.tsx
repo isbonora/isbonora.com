@@ -11,7 +11,7 @@ export default async function ImageGallery() {
 
   return (
     <div className="p-4 bg-slate-100">
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
         {galleryFiles.map((file) => {
           return (
             <ImageZoomable
