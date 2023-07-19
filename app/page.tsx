@@ -46,7 +46,7 @@ export default function Home() {
               src={dicart}
               page="#"
               title="DiCart"
-              description="A dicart solution to solve all the things"
+              description="Empowering individuals with Type 1 Diabetes through seamless integration and holistic management."
             />
             <FeaturedProject
               alt="iwhub"
