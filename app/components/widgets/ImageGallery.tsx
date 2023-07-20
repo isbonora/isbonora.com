@@ -20,6 +20,8 @@ export default async function ImageGallery() {
             alt="Gallery Image"
             width={250}
             height={250}
+            sizes='(max-width: 400px) 100vw, (max-width: 600px) 50vw, 33vw'
+            className='hover:outline outline-4 outline-slate-300'
             />
               
           );
