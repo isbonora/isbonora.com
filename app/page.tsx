@@ -10,6 +10,9 @@ import FeaturedProject from "@/components/featuredProject";
 
 import ProjectsList from "@/components/ProjectsList";
 import Banner from "./components/header/banner";
+
+import PhotoGallery from "./components/widgets/ImageGallery";
+
 export default function Home() {
   const env = process.env.NODE_ENV;
 
@@ -65,6 +68,12 @@ export default function Home() {
 
           <ProjectsList />
         </div>
+        <div className="flex flex-col gap-6">
+            <h3 className="text-xl font-light lg:col-span-2 text-slate-500">
+              Photography
+            </h3>
+            <PhotoGallery />
+          </div>
       </div>
     </main>
   );

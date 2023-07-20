@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import Image from "next/image";
+
 import Link from "next/link";
 
 import ExternalLink from "@/components/project/ExternalLink";
@@ -7,18 +7,20 @@ import InlineSection from "@/components/project/InlineSection";
 import InlineSectionItem from "@/components/project/InlineSectionItem";
 import Section from "@/components/project/Section";
 
+import ImageZoomable from "@/components/widgets/ImageZoomable";
+
 import type { MDXComponents } from "mdx/types";
 
 // Repsonsive image component
 // TODO: Maybe move to a separate file?
 const ResponsiveImage = (props: { src: string; alt: string }) => (
-  <Image
+  <ImageZoomable
     {...props}
-    width={600}
-    height={400}
-    sizes="(min-width: 808px) 50vw, 100vw"
+    width={800}
+    height={600}
     className="off-width"
     alt={props.alt}
+    sizes='(max-width: 1400px) 100vw, (max-width: 900px) 50vw, 33vw'
   />
 );
 
@@ -35,7 +37,7 @@ const CustomComponents = {
   InlineSection,
   Section,
   Link,
-  Image,
+  ImageZoomable,
   // Widgets
   ModelViewer,
   Youtube,
