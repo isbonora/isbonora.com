@@ -18,8 +18,8 @@ export default async function ImageGallery() {
             key={file}
             src={`/gallery/${file}`}
             alt="Gallery Image"
-            width={1400}
-            height={800}
+            width={250}
+            height={250}
             />
               
           );

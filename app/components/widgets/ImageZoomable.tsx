@@ -9,19 +9,18 @@ export default function ImageZoomable({ src, alt, width, height }) {
   return (
     <div className="">
       <Image
-        id="small-image"
         key={src}
         src={src}
         alt={alt}
-        width={250}
-        height={500}
-        sizes="(max-width: 200px) 100vw, (max-width: 350px) 50vw, 33vw"
+        width={width}
+        height={height}
+        sizes="(max-width: 1200px) 1400px, (max-width: 1000px) 1200px, (max-width: 600px) 800px, 400px"
         onClick={() => setIsZoomed(true)}
         className="cursor-pointer hover:outline outline-4 outline-slate-300"
       />
       {isZoomed && (
         <div
-          className="fixed top-0 left-0 flex items-center justify-center w-screen h-screen bg-black bg-opacity-75"
+          className="fixed top-0 left-0 flex items-center justify-center w-screen h-screen pl-4 pr-8 bg-black bg-opacity-75"
           onClick={() => setIsZoomed(false)}
         >
           <Suspense fallback={<div className="text-white">Loading...</div>}>
@@ -29,10 +28,13 @@ export default function ImageZoomable({ src, alt, width, height }) {
               id="large-image"
               src={src}
               alt={alt}
-              width={width}
-              height={height}
-              className="max-h-[90vh] object-contain cursor-pointer"
-              sizes="(max-width: 1200px) 100vw, (max-width: 1000px) 50vw, 33vw"
+              width={1200}
+              height={800}
+              className="max-h-[90vh] object-contain cursor-pointer opacity-0  transition-opacity duration-300"
+              sizes="(max-width: 1200px) 1400px, (max-width: 1000px) 1200px, (max-width: 600px) 800px"
+              onLoad={(event) => {
+                event.currentTarget.classList.add("opacity-100");
+              }}
             />
           </Suspense>
         </div>
