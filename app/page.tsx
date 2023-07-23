@@ -46,7 +46,7 @@ export default function Home() {
             <FeaturedProject
               alt="DiCart"
               src={dicart}
-              page="#"
+              page="/posts/dicart-personalized-sensitive-care"
               title="DiCart"
               description="Empowering individuals with Type 1 Diabetes through seamless integration and holistic management."
             />
