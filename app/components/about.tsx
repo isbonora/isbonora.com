@@ -12,7 +12,7 @@ export default function About() {
           href="https://wikipedia.org/wiki/Industrial_design"
           target="_blank"
         >
-          Industrial Designer <ArrowUpRightIcon className="w-3 h-" />
+          Industrial Designer <ArrowUpRightIcon className="w-3" />
         </Link>
         , programmer and graphic artist based in Munich, Germany. I graduated
         with honours in Industrial Design at{" "}
@@ -22,28 +22,28 @@ export default function About() {
           target="_blank"
         >
           Queensland University of Technology{" "}
-          <ArrowUpRightIcon className="w-3 h-" />
+          <ArrowUpRightIcon className="w-3" />
         </Link>{" "}
         with a strong interest in solving users’ problems with design thinking.
         I am currently Interning at{" "}
         <Link className="inline-flex items-center" href="#">
-          Idealworks <ArrowUpRightIcon className="w-3 h-" />
+          Idealworks <ArrowUpRightIcon className="w-3" />
         </Link>
         , a{" "}
         <Link className="inline-flex items-center" href="#">
-          BMW Group <ArrowUpRightIcon className="w-3 h-" />
+          BMW Group <ArrowUpRightIcon className="w-3" />
         </Link>{" "}
         company, applying human-centred design techniques to support teams
         internally with web-based solutions to improve customer satisfaction.
       </p>
       <div className="grid grid-cols-2 gap-4 mt-5 lg:flex lg:flex-wrap">
-        <Link href="#" className="button">
+        <Link href="https://www.instagram.com/isbonora.design/" className="button">
           Instagram
         </Link>
-        <Link href="#" className="button">
+        <Link href="https://www.linkedin.com/in/isbonora/" className="button">
           Linkedin
         </Link>
-        <Link href="#" className="button">
+        <Link href="https://github.com/isbonora" className="button">
           GitHub
         </Link>
         <Link

@@ -18,7 +18,7 @@ export default function Clock() {
   const munichTime = time.toLocaleTimeString("en-GB", { timeZone: "Europe/Berlin", hour: "2-digit", minute: "2-digit" });
 
   // Set emoji based on time of day
-  const emoji = (time.getHours() >= 4 && time.getHours() <= 21) ? "🌞" : "🌙";
+  const emoji = (time.getHours() >= 5 && time.getHours() <= 20) ? "🌞" : "🌙";
 
   return <span>{emoji} {munichTime}</span>;
 }
