@@ -27,6 +27,7 @@ const ModelViewer = dynamic(() => import("@/components/project/ModelViewer"));
 const Youtube = dynamic(() => import("@/components/project/Youtube"));
 const Video = dynamic(() => import("@/components/project/Video"));
 const ImageWithCaption = dynamic(() => import("@/components/project/ImageWithCaption"));
+const FigmaEmbed = dynamic(() => import("@/components/widgets/FigmaEmbed"));
 
 // Dynamically import components here
 const CustomComponents = {
@@ -42,6 +43,7 @@ const CustomComponents = {
   Video,
   InlineSectionItem,
   ImageWithCaption,
+  FigmaEmbed,
 };
 
 // Define MDX compatible components here
