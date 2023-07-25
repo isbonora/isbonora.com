@@ -1,4 +1,6 @@
 import Link from "next/link";
+import styles from "@/styles/styles.module.scss";
+
 
 function BuildTagList({ tags }: { tags: string[] }) {
   return (
@@ -8,7 +10,7 @@ function BuildTagList({ tags }: { tags: string[] }) {
       {tags.slice(0, 3).map((tag) => (
         <span
           key={tag}
-          className="px-2 text-slate-500 text-xs bg-slate-200 py-0.5"
+          className={styles.tag}
           id="tag"
         >
           {tag}
@@ -31,7 +33,7 @@ export default function SimpleLink({
   return (
     <Link
       href={href}
-      className="flex flex-col gap-2 px-4 pt-2 pb-4 pr-8 text-black lg:aspect-square bg-slate-100 hover:outline outline-slate-200 hover:text-black hover:no-underline"
+      className="flex flex-col gap-2 px-4 pt-2 pb-4 h-64 pr-8 text-black lg:aspect-square bg-slate-100 hover:outline outline-slate-200 hover:text-black hover:no-underline"
     >
       <h3 className="text-base lg:text-lg">{title}</h3>
       {tags && tags.length > 0 && <BuildTagList tags={tags} />}

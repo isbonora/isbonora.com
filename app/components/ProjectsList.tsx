@@ -3,6 +3,8 @@ import { getSortedPosts } from "app/lib/mdx";
 
 import { ArrowDownRightIcon } from "@heroicons/react/24/outline";
 
+import styles from "@/styles/styles.module.scss";
+
 export default async function ProjectList() {
   // Toggle view more state
   const posts = await getSortedPosts();
@@ -13,9 +15,8 @@ export default async function ProjectList() {
   });
 
   return (
-    <div className="grid gap-6 grid-cols-2 lg:grid-cols-3" id="more">
+    <div className={styles.projectGrid} id="more">
       {/* Iterate over top 5 latest, unfeatured, posts */}
-
       {otherPosts.slice(0, 5).map((post) => (
         <MediumLink
           key={post.slug}
