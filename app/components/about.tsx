@@ -38,7 +38,7 @@ export default function About() {
         company, applying human-centred design techniques to support teams
         internally with web-based solutions to improve customer satisfaction.
       </p>
-      <div className="flex gap-4">
+      <div className="flex gap-4 mt-5 lg:mt-0">
         <Link
           href="https://www.instagram.com/isbonora.design/"
           target="_blank"
