@@ -35,7 +35,7 @@ $ratio-1x2: 1 / 2;
 
 // Anything greater than 768px ie. desktop
 @mixin desktop() {
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }

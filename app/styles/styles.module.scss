@@ -100,9 +100,10 @@
   display: flex;
   gap: 1.5rem;
   overflow-x: scroll;
-  padding: 2rem 2rem;
+  padding: 0.3rem 0.3rem 0.5rem 0.3rem;
+  max-width: fit-content;
 
-  @media (min-width: 1024px) {
+  @include desktop() {
     left: 50%;
     margin-left: -35vw;
     margin-right: -35vw;
@@ -114,9 +115,53 @@
     margin-bottom: 2rem;
   }
 }
+// className="flex flex-col gap-2 px-4 pt-2 pb-4  pr-8 text-black lg:aspect-square bg-slate-100 hover:outline outline-slate-200 hover:text-black hover:no-underline"
+
+.projectLink {
+  padding: 1rem;
+  background-color: $slate-100;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 250px;
+
+  height: 250px;
+  aspect-ratio: $ratio-1x1;
+
+  &:hover {
+    outline: $hover-outline;
+    color: black;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: $focus-outline;
+  }
+
+  h3 {
+    font-size: 1rem /* 20px */;
+    line-height: 1.5rem /* 28px */;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 0.75rem /* 16px */;
+    line-height: 1.2rem /* 16px */;
+    overflow: hidden;
+    color: $slate-600;
+  }
+}
 
 // TODO: Move these sort of "global" styles to a separate file
 // TODO: Setup font sizes and line heights in a more consistent way
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
 .tag {
   padding: 0.125rem 0.5rem;
   font-size: 0.75rem /* 12px */; // xs

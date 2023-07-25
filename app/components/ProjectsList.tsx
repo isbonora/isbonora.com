@@ -22,7 +22,7 @@ export default async function ProjectList() {
           key={post.slug}
           href={`/posts/` + post.slug}
           title={post.frontmatter.title}
-          description={post.frontmatter.subtitle.slice(0, 75) + "..."}
+          description={post.frontmatter.subtitle.slice(0, 150) + "..."}
           tags={post.frontmatter.tags}
         />
       ))}
