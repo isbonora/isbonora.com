@@ -1,0 +1,22 @@
+// _base.scss
+$primary-color: #020617;
+$secondary-color: #64748b;
+
+// Grids
+$grid-cols-1: repeat(1, minmax(0, 1fr));
+$grid-cols-2: repeat(2, minmax(0, 1fr));
+$grid-cols-3: repeat(3, minmax(0, 1fr));
+$grid-cols-4: repeat(4, minmax(0, 1fr));
+
+$col-span-1: span 1 / span 1;
+$col-span-2: span 2 / span 2;
+$col-span-3: span 3 / span 3;
+$col-span-4: span 4 / span 4;
+
+
+// Define Breakpoints
+@mixin desktop() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

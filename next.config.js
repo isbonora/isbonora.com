@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
+
 const nextConfig = {
-  options: {
-    providerImportSource: '@mdx-js/react',
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'app', 'styles')],
   },
 };
 

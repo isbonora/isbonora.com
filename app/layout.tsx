@@ -5,11 +5,11 @@ import { Analytics } from '@vercel/analytics/react';
 
 import Footer from '@/components/footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata = {
   title: 'Isaac Bonora',
-  description: 'The portfolio of Isaac Bonora, a industrial designer based in Munich, Germany.',
+  description: 'Webstite of Isaac Bonora, a industrial designer based in Munich, Germany.',
 }
 
 export default function RootLayout({
@@ -20,7 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-
         {children}
         <Analytics />
         <Footer />
