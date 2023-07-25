@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
 
+import styles from "@/styles/styles.module.scss";
+
 export default function About() {
   return (
     <section id="about" className="">
@@ -37,21 +39,36 @@ export default function About() {
         internally with web-based solutions to improve customer satisfaction.
       </p>
       <div className="grid grid-cols-2 gap-4 mt-5 lg:flex lg:flex-wrap">
-        <Link href="https://www.instagram.com/isbonora.design/" className="button">
+        <Link
+          href="https://www.instagram.com/isbonora.design/"
+          target="_blank"
+          className={styles.socialLink}
+        >
           Instagram
         </Link>
-        <Link href="https://www.linkedin.com/in/isbonora/" className="button">
+        /
+        <Link
+          href="https://www.linkedin.com/in/isbonora/"
+          target="_blank"
+          className={styles.socialLink}
+        >
           Linkedin
         </Link>
-        <Link href="https://github.com/isbonora" className="button">
+        /
+        <Link
+          href="https://github.com/isbonora"
+          target="_blank"
+          className={styles.socialLink}
+        >
           GitHub
         </Link>
+        /
         <Link
-          href="https://docs.google.com/spreadsheets/d/1r6yXxNRnAWpy8E9hcNJVzMdt4hY5n5QvVtYqNK--Hhw/edit?usp=sharing"
+          href="https://read.cv/isbonora"
           target="_blank"
-          className="button"
+          className={styles.socialLink}
         >
-          CV
+          read.cv
         </Link>
       </div>
 
