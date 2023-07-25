@@ -30,27 +30,6 @@ export default function Home() {
               title="modClave: Store & Sterilise"
               description="Simple reprocessing of medical instruments along side patient care."
             />
-            <FeaturedProject
-              alt="DiCart"
-              src={dicart}
-              page="/posts/dicart-personalized-sensitive-care"
-              title="DiCart"
-              description="Empowering young individuals with Type 1 Diabetes."
-            />
-            {/* <FeaturedProject
-              alt="iwhub"
-              src={iwhub}
-              page="/posts/iwhub-reflection-flag"
-              title="iw.hub: Reflection Flag"
-              description="A project with BMW Group"
-            /> */}
-            <FeaturedProject
-              alt="Vector on Rails"
-              src={vector_on_rails}
-              page="/posts/vector-on-rails-web-design-vectoretch"
-              title="Vector on Rails"
-              description="Design and development of a order, stock and customer management system."
-            />
           </section>
           <section id='projects'>
             <ProjectsList />

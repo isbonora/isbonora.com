@@ -38,7 +38,7 @@ export default function FeaturedProject({
         <Image
           alt={alt}
           src={src}
-          fill
+          
           placeholder="blur"
           sizes="(min-width: 808px) 50vw, 100vw"
         />
