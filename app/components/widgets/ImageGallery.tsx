@@ -1,6 +1,6 @@
+"use server";
 import fs from "fs";
 import path from "path";
-import Image from "next/image";
 
 import ImageZoomable from "./ImageZoomable";
 
@@ -15,15 +15,14 @@ export default async function ImageGallery() {
         {galleryFiles.map((file) => {
           return (
             <ImageZoomable
-            key={file}
-            src={`/gallery/${file}`}
-            alt="Gallery Image"
-            width={250}
-            height={250}
-            sizes='(max-width: 400px) 100vw, (max-width: 600px) 50vw, 33vw'
-            className='hover:outline outline-4 outline-slate-300'
+              key={file}
+              src={`/gallery/${file}`}
+              alt="Gallery Image"
+              width={250}
+              height={250}
+              sizes="(max-width: 400px) 100vw, (max-width: 600px) 50vw, 33vw"
+              className="hover:outline outline-4 outline-slate-300"
             />
-              
           );
         })}
       </div>
