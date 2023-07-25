@@ -44,7 +44,7 @@ a:hover {
 }
 
 a.button {
-  @apply w-full px-6 py-2 text-lg font-normal   hover:outline outline-slate-200 lg:w-auto lg:py-1 text-slate-800 hover:text-slate-800  bg-slate-100 lg:text-sm;
+  @apply w-full px-6 py-2 text-lg font-normal   hover:outline outline-slate-200 lg:w-auto lg:py-1 text-slate-800 hover:text-slate-800  bg-slate-200 lg:text-sm;
 }
 
 .card-1-1 {
