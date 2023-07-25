@@ -22,20 +22,20 @@ export default function Home() {
         <About />
         <div className={styles.sectionContainer}>
           <h3 className={styles.heading3}>Projects</h3>
-          <section className={styles.featuredProjectsContainer} id="featured">
+          <section className={styles.featuredProjectGrid} id="featured-projects">
             <FeaturedProject
               alt="modClave"
               src={modclave}
               page="/posts/modclave-store-and-sterilise"
               title="modClave: Store & Sterilise"
-              description="The modClave is a modular sterilisation desktop appliance that supports small-to-medium-sized medical practices by reprocessing medical instruments along side patient care."
+              description="Simple reprocessing of medical instruments along side patient care."
             />
             <FeaturedProject
               alt="DiCart"
               src={dicart}
               page="/posts/dicart-personalized-sensitive-care"
               title="DiCart"
-              description="Empowering individuals with Type 1 Diabetes through seamless integration and holistic management."
+              description="Empowering young individuals with Type 1 Diabetes."
             />
             {/* <FeaturedProject
               alt="iwhub"
@@ -49,18 +49,19 @@ export default function Home() {
               src={vector_on_rails}
               page="/posts/vector-on-rails-web-design-vectoretch"
               title="Vector on Rails"
-              description="Software development project for Vector Etch. Design and developing a order, stock and customer management system."
+              description="Design and development of a order, stock and customer management system."
             />
           </section>
-
-          <ProjectsList />
+          <section id='projects'>
+            <ProjectsList />
+          </section>
         </div>
-        <div className={styles.sectionContainer}>
+        <section className={styles.sectionContainer} id='foto-gallery'>
           <h3 className={styles.heading3}>
             Photography
           </h3>
           <PhotoGallery />
-        </div>
+        </section>
       </div>
     </main>
   );
