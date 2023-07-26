@@ -9,7 +9,7 @@
   padding: 4rem 1rem 8rem;
 
   @include desktop() {
-    padding-bottom: 24rem;
+    padding-bottom: 6rem;
   }
 }
 
@@ -21,7 +21,7 @@
   gap: 3rem;
 }
 
-.heading3 {
+.sectionHeader {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.75rem;
@@ -52,7 +52,7 @@
   position: absolute;
   overflow: hidden;
   z-index: -1;
-  top: -26vw;
+  top: -35vw;
   margin-top: 2rem;
   margin-bottom: 2rem;
 
@@ -63,7 +63,7 @@
   right: 50%;
   height: 100vw;
   width: 100vw;
-  
+
   @include desktop() {
     top: -19vw;
     margin-left: -35vw;
@@ -202,19 +202,57 @@
   background-color: $slate-200;
 }
 
+// About Styles
 
+.aboutParagraph {
+  font-size: 1rem /* 16px */;
+  line-height: 2;
+  font-weight: 300;
+  color: black;
+  margin-top: 1rem;
 
-.socialLink {
-  color: $blue-500;
-  text-decoration: none;
-  &:hover {
-    outline: $hover-outline;
+  a {
+    display: inline-flex;
+    align-items: center;
+
+    color: $blue-500;
+    text-decoration: none;
+    &:hover {
+      outline: $hover-outline;
+      outline-offset: 0.25rem;
+    }
+
+    &:focus {
+      outline: $focus-outline;
+      outline-offset: 0.25rem;
+    }
+  }
+}
+
+.aboutSocialLinks {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 3rem;
+
+  @include desktop() {
+    gap: 1rem;
+    margin-top: 1.5rem;
   }
 
-  &:focus {
-    outline: $focus-outline;
-  }
-  
-  font-size: 1.125rem; /* 18px */
+
+  font-size: 1rem; /* 18px */
   line-height: 1.75rem; /* 28px */
+  a {
+    color: $blue-500;
+    text-decoration: none;
+    &:hover {
+      outline: $hover-outline;
+      outline-offset: 0.25rem;
+    }
+
+    &:focus {
+      outline: $focus-outline;
+      outline-offset: 0.25rem;
+    }
+  }
 }

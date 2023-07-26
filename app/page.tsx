@@ -41,13 +41,13 @@ export default function Home() {
             />
           </section>
 
-          <h3 className={styles.heading3}>Projects</h3>
           <section id="projects">
+            <h3 className={styles.sectionHeader}>Projects</h3>
             <ProjectsList />
           </section>
         </div>
         <section className={styles.sectionContainer} id="foto-gallery">
-          <h3 className={styles.heading3}>Photography</h3>
+          <h3 className={styles.sectionHeader}>Photography</h3>
           <PhotoGallery />
         </section>
       </div>
