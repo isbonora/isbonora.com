@@ -58,10 +58,6 @@ p {
 
 
 /* Define section styles */
-section {
-  @apply flex flex-col gap-3;
-}
-
 section > p {
   @apply leading-loose pb-4 px-2 lg:px-0;
 }
