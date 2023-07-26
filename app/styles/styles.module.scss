@@ -256,3 +256,18 @@
     }
   }
 }
+
+
+// Header Styles
+.headerContainer {
+  display: flex; 
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 300;
+  margin-top: 3rem;
+
+  a {
+    display: flex;
+    gap: 0.5rem;
+  }
+}

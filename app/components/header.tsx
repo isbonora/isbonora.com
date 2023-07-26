@@ -1,15 +1,27 @@
+"use client";
 import Link from "next/link";
 
-import Clock from '@/components/header/time'
+import { usePathname } from "next/navigation";
+
+import Clock from "@/components/header/time";
+import styles from "@/styles/styles.module.scss";
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const isIndex = pathname === "/";
+
   return (
-    <div
-      id="header"
-      className="flex justify-between text-secondary font-light px-2 lg:px-0 pt-12"
-    >
-      <Link href='/' className='text-black flex-shrink'>Isaac Bonora</Link>
-      <span className="font-mono text-sm font-thin flex-shrink">
+    <div id="header" className={styles.headerContainer}>
+      {isIndex ? (
+        <span>🎨🗒️🧑‍💻🇦🇺</span>
+      ) : (
+        <Link href="/">
+          🎨🗒️🧑‍💻🇦🇺 go back 
+        </Link>
+      )}
+
+      <span>
         <Clock /> GMT+2
       </span>
     </div>

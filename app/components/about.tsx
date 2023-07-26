@@ -5,9 +5,9 @@ import styles from "@/styles/styles.module.scss";
 //
 export default function About() {
   return (
-    <section id="about" className="">
+    <section id="about">
       <p className={styles.aboutParagraph}>
-        <strong>Isaac Bonora</strong>, an{" "}
+        <strong>Isaac Bonora</strong> is an{" "}
         <Link
           href="https://wikipedia.org/wiki/Industrial_design"
           target="_blank"
