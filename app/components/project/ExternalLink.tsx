@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import postStyles from "@/styles/post.module.scss";
+
 export default function ExternalLink({
   href,
   emoji,
@@ -14,10 +16,10 @@ export default function ExternalLink({
       id="file_link"
       href={href}
       target="_blank"
-      className=" flex justify-between items-center bg-slate-100 hover:outline outline-slate-200 px-6 py-4  mx-2 lg:mx-0"
+      className={postStyles["external-link"]}
     >
-      <span className="text-4xl">{emoji}</span>
-      <p className="text-lg xl:text-2xl">{description}</p>
+      <span>{emoji}</span>
+      <p>{description}</p>
     </Link>
   );
 }

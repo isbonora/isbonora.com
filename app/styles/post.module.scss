@@ -61,6 +61,9 @@
   section {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   p,
@@ -438,4 +441,28 @@
 .marginnote > code,
 .sidenote > code {
   font-size: 1rem;
+}
+
+// " flex justify-between items-center bg-slate-100 hover:outline outline-slate-200 px-6 py-4  mx-2 lg:mx-0"
+.external-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $slate-100 !important;
+
+  &:hover {
+    outline: $hover-outline;
+  }
+
+  &:focus {
+    outline: $focus-outline;
+  }
+
+  padding: 1rem 1.5rem;
+
+  border: none;
+
+  span {
+    font-size: 3rem;
+  }
 }
