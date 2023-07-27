@@ -29,6 +29,9 @@ const Video = dynamic(() => import("@/components/project/Video"));
 const ImageWithCaption = dynamic(() => import("@/components/project/ImageWithCaption"));
 const FigmaEmbed = dynamic(() => import("@/components/widgets/FigmaEmbed"));
 
+const Mn = dynamic(() => import("@/components/post/Marginnote"));
+const Sn = dynamic(() => import("@/components/post/Sidenote"));
+
 // Dynamically import components here
 const CustomComponents = {
   // Formatting
@@ -44,6 +47,8 @@ const CustomComponents = {
   InlineSectionItem,
   ImageWithCaption,
   FigmaEmbed,
+  Mn,
+  Sn,
 };
 
 // Define MDX compatible components here

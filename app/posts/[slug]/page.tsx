@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 
 import { Suspense } from "react";
 
-import "@/styles/project.css";
+// import "@/styles/project.css";
 
 import postStyles from "@/styles/post.module.scss";
 
