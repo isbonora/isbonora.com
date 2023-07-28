@@ -457,11 +457,16 @@
     outline: $focus-outline;
   }
 
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 
   border: none;
 
   span {
-    font-size: 3rem;
+    font-size: 2rem;
   }
+    text-decoration: none;
+
+    -webkit-background-size: 0px 0px, 0px 0px, 0px 0px !important;
+    -moz-background-size: 0px 0px, 0px 0px, 0px 0px !important;
+    background-size: 0px 0px, 0px 0px, 0px 0px !important;
 }
