@@ -257,6 +257,22 @@
   }
 }
 
+.boxLink {
+  display: inline-flex;
+
+  color: $blue-500;
+  text-decoration: none;
+  &:hover {
+    outline: $hover-outline;
+    outline-offset: 0.25rem;
+  }
+
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: 0.25rem;
+  }
+}
+
 
 // Header Styles
 .headerContainer {

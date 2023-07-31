@@ -16,7 +16,7 @@ export default function Header() {
       {isIndex ? (
         <span>🎨🗒️🧑‍💻🇦🇺</span>
       ) : (
-        <Link href="/">
+        <Link href="/"  className={styles.boxLink}>
           🎨🗒️🧑‍💻🇦🇺 go back 
         </Link>
       )}

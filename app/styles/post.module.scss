@@ -10,7 +10,6 @@
   }
 
   h2 {
-    font-style: italic;
     font-weight: 400;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
@@ -19,7 +18,6 @@
   }
 
   h3 {
-    font-style: italic;
     font-weight: 400;
     font-size: 1.7rem;
     margin-top: 2rem;
@@ -44,6 +42,11 @@
     font-size: 1.8rem;
     display: block;
     line-height: 1;
+  }
+
+  img {
+    width: 100%;
+    margin-top: 2.5rem;
   }
 
   .numeral {
@@ -224,8 +227,6 @@
   //     background: #b4d5fe;
   //   }
 
-  
-
   blockquote .sidenote,
   blockquote .marginnote {
     margin-right: -82%;
@@ -267,7 +268,6 @@
   }
 
   /* Sidenotes, margin notes, figures, captions */
-
 
   pre > code {
     font-size: 0.9rem;
@@ -389,13 +389,10 @@
 
     img {
       width: 100%;
+      margin-bottom: 1rem;
     }
   }
 }
-
-
-
-
 
 .sidenote,
 .marginnote {
@@ -448,6 +445,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: $slate-100 !important;
+  margin-bottom: 1rem;
 
   &:hover {
     outline: $hover-outline;
@@ -464,9 +462,9 @@
   span {
     font-size: 2rem;
   }
-    text-decoration: none;
+  text-decoration: none;
 
-    -webkit-background-size: 0px 0px, 0px 0px, 0px 0px !important;
-    -moz-background-size: 0px 0px, 0px 0px, 0px 0px !important;
-    background-size: 0px 0px, 0px 0px, 0px 0px !important;
+  -webkit-background-size: 0px 0px, 0px 0px, 0px 0px !important;
+  -moz-background-size: 0px 0px, 0px 0px, 0px 0px !important;
+  background-size: 0px 0px, 0px 0px, 0px 0px !important;
 }
