@@ -3,7 +3,7 @@ h1 {
 }
 
 p {
-  @apply text-base max-w-3xl  leading-relaxed;
+  @apply text-base max-w-3xl leading-relaxed;
 }
 
 
