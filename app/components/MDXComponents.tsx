@@ -7,6 +7,8 @@ import InlineSection from "@/components/project/InlineSection";
 import InlineSectionItem from "@/components/project/InlineSectionItem";
 import Section from "@/components/project/Section";
 
+import postStyles from "@/styles/post.module.scss";
+
 import type { MDXComponents } from "mdx/types";
 
 // Repsonsive image component
@@ -17,9 +19,7 @@ const ResponsiveImage = (props: { src: string; alt: string }) => (
     width={600}
     height={400}
     sizes="(min-width: 808px) 50vw, 100vw"
-    style={{
-      width: "100%",
-    }}
+    className={postStyles["post-image"]}
     alt={props.alt}
   />
 );

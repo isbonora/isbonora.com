@@ -1,3 +1,6 @@
+import postStyles from "@/styles/post.module.scss";
+
+
 export default function SideBySide({
   children,
   className,
@@ -9,7 +12,7 @@ export default function SideBySide({
 }) {
   return (
     <div
-      className={`grid grid-cols-1 xl:grid-cols-2 gap-12 off-width items-center bg-slate-100 px-4 lg:px-8 py-6 lg:py-12 ${className}`}
+      className={`${postStyles['inline-section']} ${className}`}
       id={id}
     >
       {children}

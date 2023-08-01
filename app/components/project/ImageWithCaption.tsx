@@ -4,7 +4,7 @@ import Section from "@/components/project/Section";
 
 export default function ImageWithCaption({caption, ...props}) {
     return (
-        <Section className="items-center">
+        <Section className="flex flex-col gap-0 items-center">
         <Image
           {...props}
           alt={props.alt}
@@ -13,9 +13,9 @@ export default function ImageWithCaption({caption, ...props}) {
           width={1200}
           height={1000}
         />
-        <p className="caption">
+        <span className="text-slate-500">
           {caption}
-        </p>
+        </span>
       </Section>
     )
 }

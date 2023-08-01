@@ -468,3 +468,40 @@
   -moz-background-size: 0px 0px, 0px 0px, 0px 0px !important;
   background-size: 0px 0px, 0px 0px, 0px 0px !important;
 }
+
+.post-image {
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+// grid grid-cols-1 xl:grid-cols-2 gap-12 off-width items-center bg-slate-100 px-4 lg:px-8 py-6 lg:py-12
+
+// Inline Section
+.inline-section {
+  display: grid;
+  grid-template-columns: $grid-cols-1;
+  gap: 1rem;
+  align-items: center;
+  background-color: $slate-100;
+
+  padding: 1rem 1.5rem;
+
+  margin: 6rem 0px;
+
+  @include off-width() {
+  }
+
+  @include desktop() {
+    grid-template-columns: $grid-cols-2;
+
+    padding: 1rem 3rem;
+    gap: 3rem;
+  }
+
+  p {
+    @include desktop() {
+      padding: 0 3rem;
+    }
+  }
+}
