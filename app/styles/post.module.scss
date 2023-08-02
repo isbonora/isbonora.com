@@ -1,5 +1,9 @@
 @import "mixins";
 
+.container {
+
+}
+
 .contentMarkdown {
   h1 {
     font-weight: 400;
@@ -261,9 +265,7 @@
 .post-image {
   margin-top: 3rem;
   margin-bottom: 3rem;
-
-  @include off-width() {
-  }
+  width: 100%;
 }
 
 // grid grid-cols-1 xl:grid-cols-2 gap-12 off-width items-center bg-slate-100 px-4 lg:px-8 py-6 lg:py-12

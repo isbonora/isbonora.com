@@ -12,6 +12,8 @@ export interface FrontMatterType {
     // It's assumed that it shows in the top 4 posts, that are done manually.
     // TODO: Make featured posts dynamic.
     featured?: boolean;
+    // cover image.
+    cover: string;
   }
 
 // Post Type

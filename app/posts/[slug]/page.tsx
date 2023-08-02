@@ -3,6 +3,8 @@ import { PostType } from "../../types/post";
 import ProjectInfo from "@/components/project/ProjectInfo";
 import { notFound } from "next/navigation";
 
+import Image from "next/image";
+
 import { Suspense } from "react";
 
 // import "@/styles/project.css";
@@ -29,17 +31,25 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="">
-      {/* Header */}
+    <div className="border-t">
       <section>
-        <h1>{frontmatter.title}</h1>
-        <p className="lead">{frontmatter.subtitle}</p>
-        <ProjectInfo
-          clientName={frontmatter.client}
-          bodyText={frontmatter.description}
-          datePeriod={getFullYear(frontmatter.date)}
-          tags={frontmatter.tags}
+        <Image
+          src={frontmatter.cover}
+          alt={frontmatter.title}
+          width={1920}
+          height={1080}
+          className='max-h-[80vh]'
         />
+        <div className="flex justify-between px-12 py-6 bg-slate-50 h-[20vh]">
+          <div className="flex flex-col">
+
+          <h1 className="text-4xl">{frontmatter.title}</h1>
+          <p className="w-[32rem]">{frontmatter.subtitle}</p>
+          </div>
+          <div>
+            some tags
+          </div>
+        </div>
       </section>
       <article className={postStyles.contentMarkdown}>
         {/* Content from MDX */}
