@@ -10,6 +10,10 @@ import { Suspense } from "react";
 // import "@/styles/project.css";
 
 import postStyles from "@/styles/post.module.scss";
+import { Libre_Caslon_Text  } from 'next/font/google'
+
+const libreCaslonText = Libre_Caslon_Text({ subsets: ['latin'], weight: "400", variable: '--font-libre-caslon-text' })
+
 
 function getFullYear(dateUTC: string) {
   return new Date(dateUTC).getFullYear().toString();
@@ -43,7 +47,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="flex justify-between px-12 py-6 bg-slate-50 h-[20vh]">
           <div className="flex flex-col">
 
-          <h1 className="text-4xl">{frontmatter.title}</h1>
+          <h1 className={`${libreCaslonText.className} text-4xl`}>{frontmatter.title}</h1>
           <p className="w-[32rem]">{frontmatter.subtitle}</p>
           </div>
           <div>
