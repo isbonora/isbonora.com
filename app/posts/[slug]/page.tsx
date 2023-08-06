@@ -10,9 +10,6 @@ import { Suspense } from "react";
 // import "@/styles/project.css";
 
 import postStyles from "@/styles/post.module.scss";
-import { Libre_Caslon_Text  } from 'next/font/google'
-
-const libreCaslonText = Libre_Caslon_Text({ subsets: ['latin'], weight: "400", variable: '--font-libre-caslon-text' })
 
 
 function getFullYear(dateUTC: string) {
@@ -36,24 +33,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="border-t">
-      <section>
+      <section 
+          className='relative  min-h-[calc(100vh-56px)] mb-24'>
         <Image
           src={frontmatter.cover}
           alt={frontmatter.title}
-          width={1920}
-          height={1080}
-          className='max-h-[80vh]'
+          fill={true}
+          className='object-cover  rounded-b-2xl'
         />
-        <div className="flex justify-between px-12 py-6 bg-slate-50 h-[20vh]">
-          <div className="flex flex-col">
-
-          <h1 className={`${libreCaslonText.className} text-4xl`}>{frontmatter.title}</h1>
-          <p className="w-[32rem]">{frontmatter.subtitle}</p>
-          </div>
-          <div>
-            some tags
-          </div>
-        </div>
+        <ProjectInfo title={frontmatter.title} subtitle={frontmatter.subtitle} tags={frontmatter.tags} />
       </section>
       <article className={postStyles.contentMarkdown}>
         {/* Content from MDX */}
