@@ -39,7 +39,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           src={frontmatter.cover}
           alt={frontmatter.title}
           fill={true}
-          className='object-cover  rounded-b-2xl'
+          className='object-cover rounded-b-2xl'
         />
         <ProjectInfo title={frontmatter.title} subtitle={frontmatter.subtitle} tags={frontmatter.tags} />
       </section>
