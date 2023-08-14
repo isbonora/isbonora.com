@@ -7,10 +7,12 @@ import "@/styles/mdx.css";
 
 import Header from "@/components/header";
 
+import styles from "@/styles/styles.module.scss";
+
 export default function Layout({ children }) {
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-4 py-8 lg:pb-24">
-      <div className="flex flex-col w-full max-w-3xl gap-12">
+    <main className={styles.mainContainer}>
+      <div className={styles.container}>
         <Header />
         {children}
       </div>

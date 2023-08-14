@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 
 import { Suspense } from "react";
 
-import "@/styles/project.css";
+// import "@/styles/project.css";
+
+import postStyles from "@/styles/post.module.scss";
 
 function getFullYear(dateUTC: string) {
   return new Date(dateUTC).getFullYear().toString();
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           tags={frontmatter.tags}
         />
       </section>
-      <article className="project-body">
+      <article className={postStyles.contentMarkdown}>
         {/* Content from MDX */}
         <Suspense fallback={<div>Loading...</div>}>{content}</Suspense>
       </article>

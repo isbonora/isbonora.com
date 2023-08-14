@@ -34,7 +34,7 @@ export const getFileBySlug = async (slug: string) => {
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        remarkPlugins: [sectionize],
+        remarkPlugins: [],
       },
     },
     components: {

@@ -8,6 +8,26 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import styles from "@/styles/styles.module.scss";
+
+function BuildTagList({ tags }: { tags: string[] }) {
+  return (
+    <div className={styles.tagList} id="tag-list">
+      {/* Slice limits returned values */}
+      {/* Doesn't count from 0. weird */}
+      {tags.slice(0, 3).map((tag) => (
+        <span
+          key={tag}
+          className={styles.tag}
+          id="tag"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 // Fixes the error: "Type 'StaticImageData' is not assignable to type 'string'.ts(2322)"
 // When passing an imported image in to a prop like we are doing here.
 type StaticImageData = {
@@ -17,29 +37,37 @@ type StaticImageData = {
   placeholder?: string;
 };
 
-export default function FeaturedProject({ alt, src, page, title, description }: { alt: string, src: StaticImageData, page: string, title: string, description: string }) {
+export default function FeaturedProject({
+  alt,
+  src,
+  page,
+  title,
+  description,
+  tags,
+}: {
+  alt: string;
+  src: StaticImageData;
+  page: string;
+  title: string;
+  description: string;
+  tags?: string[];
+}) {
   return (
-    <Link
-      href={page}
-      className={`bg-slate-100 hover:outline outline-slate-200 selected:outline selected:outline-blue-500 p-4 text-black hover:text-black hover:no-underline`}
-    >
-      <div className="relative overflow-hidden aspect-square">
+    <Link href={page} className={styles.featuredProject}>
+      <div className={styles.featuredProjectImage}>
         <Image
           alt={alt}
           src={src}
-          fill
+          
           placeholder="blur"
           sizes="(min-width: 808px) 50vw, 100vw"
-          style={{
-            objectFit: "cover", // cover, contain, none
-          }}
         />
       </div>
-
-      <h2 className="mt-2 text-xl font-light">{title}</h2>
-      <p className="mb-2 text-sm leading-relaxed text-slate-600">
-        {description}
-      </p>
+      <div>
+        <h2>{title}</h2>
+        {tags && tags.length > 0 && <BuildTagList tags={tags} />}
+        <p>{description}</p>
+      </div>
     </Link>
   );
 }

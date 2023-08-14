@@ -7,6 +7,8 @@ import InlineSection from "@/components/project/InlineSection";
 import InlineSectionItem from "@/components/project/InlineSectionItem";
 import Section from "@/components/project/Section";
 
+import postStyles from "@/styles/post.module.scss";
+
 import type { MDXComponents } from "mdx/types";
 
 // Repsonsive image component
@@ -17,7 +19,7 @@ const ResponsiveImage = (props: { src: string; alt: string }) => (
     width={600}
     height={400}
     sizes="(min-width: 808px) 50vw, 100vw"
-    className="off-width"
+    className={postStyles["post-image"]}
     alt={props.alt}
   />
 );
@@ -28,6 +30,9 @@ const Youtube = dynamic(() => import("@/components/project/Youtube"));
 const Video = dynamic(() => import("@/components/project/Video"));
 const ImageWithCaption = dynamic(() => import("@/components/project/ImageWithCaption"));
 const FigmaEmbed = dynamic(() => import("@/components/widgets/FigmaEmbed"));
+
+const Mn = dynamic(() => import("@/components/post/Marginnote"));
+const Sn = dynamic(() => import("@/components/post/Sidenote"));
 
 // Dynamically import components here
 const CustomComponents = {
@@ -44,6 +49,8 @@ const CustomComponents = {
   InlineSectionItem,
   ImageWithCaption,
   FigmaEmbed,
+  Mn,
+  Sn,
 };
 
 // Define MDX compatible components here

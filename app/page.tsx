@@ -1,76 +1,55 @@
-
 import modclave from "@/public/posts/modclave_hero_square.jpeg";
-import dicart from "@/public/projects/dicart_hero.jpg";
-import iwhub from "@/public/projects/iwhub_hero.jpg";
+import blurred_bg from "@/public/soft-bg.png";
+// import iwhub from "@/public/projects/iwhub_hero.jpg";
 import vector_on_rails from "@/public/projects/vector_on_rails.png";
 
 import Header from "@/components/header";
 import About from "@/components/about";
 import FeaturedProject from "@/components/featuredProject";
+import Image from "next/image";
 
 import ProjectsList from "@/components/ProjectsList";
-import Banner from "./components/header/banner";
 
 import PhotoGallery from "./components/widgets/ImageGallery";
 
+import styles from "@/styles/styles.module.scss";
+
 export default function Home() {
-  const env = process.env.NODE_ENV;
-
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-4 py-8 lg:pb-24">
-      <div className="flex flex-col w-full max-w-3xl gap-12">
-
-        <div className="flex flex-col gap-4">
-          <Header />
-        </div>
+    <main className={styles.mainContainer}>
+      <div className={styles.container}>
+        <Header />
 
         <About />
-        <div className="flex flex-col gap-6">
+        <div className={styles.sectionContainer}>
           <section
-            className="grid col-span-1 gap-6 lg:grid-cols-2 "
-            id="featured"
+            className={styles.featuredProjectGrid}
+            id="featured-projects"
           >
-            <h3 className="text-xl font-light lg:col-span-2 text-slate-500">
-              Projects
-            </h3>
             <FeaturedProject
               alt="modClave"
               src={modclave}
               page="/posts/modclave-store-and-sterilise"
               title="modClave: Store & Sterilise"
-              description="The modClave is a modular sterilisation desktop appliance that supports small-to-medium-sized medical practices by reprocessing medical instruments along side patient care."
+              description="An affordable and compact sterilisation device that addresses waste mismanagement in healthcare by enabling clinics to reprocess instruments, promoting sustainability and emphasizing the importance of waste reduction during product development."
+              tags={["Medical", "Product Design", "UX"]}
             />
-            <FeaturedProject
-              alt="DiCart"
-              src={dicart}
-              page="/posts/dicart-personalized-sensitive-care"
-              title="DiCart"
-              description="Empowering individuals with Type 1 Diabetes through seamless integration and holistic management."
-            />
-            <FeaturedProject
-              alt="iwhub"
-              src={iwhub}
-              page="/posts/iwhub-reflection-flag"
-              title="iw.hub: Reflection Flag"
-              description="A project with BMW Group"
-            />
-            <FeaturedProject
-              alt="Vector on Rails"
-              src={vector_on_rails}
-              page="/posts/vector-on-rails-web-design-vectoretch"
-              title="Vector on Rails"
-              description="Software development project for Vector Etch. Design and developing a order, stock and customer management system."
+            <Image
+              className={styles.featuredProjectBackgroundImage}
+              alt="blurred_bg"
+              src={blurred_bg}
             />
           </section>
 
-          <ProjectsList />
+          <section id="projects">
+            <h3 className={styles.sectionHeader}>Projects</h3>
+            <ProjectsList />
+          </section>
         </div>
-        <div className="flex flex-col gap-6">
-            <h3 className="text-xl font-light lg:col-span-2 text-slate-500">
-              Photography
-            </h3>
-            <PhotoGallery />
-          </div>
+        <section className={styles.sectionContainer} id="foto-gallery">
+          <h3 className={styles.sectionHeader}>Photography</h3>
+          <PhotoGallery />
+        </section>
       </div>
     </main>
   );

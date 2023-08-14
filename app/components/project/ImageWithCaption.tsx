@@ -2,9 +2,12 @@ import Image from "next/image";
 
 import Section from "@/components/project/Section";
 
+import postStyles from "@/styles/post.module.scss";
+
+
 export default function ImageWithCaption({caption, ...props}) {
     return (
-        <Section className="items-center">
+        <Section className={postStyles['captioned-image-container']}>
         <Image
           {...props}
           alt={props.alt}
@@ -13,9 +16,9 @@ export default function ImageWithCaption({caption, ...props}) {
           width={1200}
           height={1000}
         />
-        <p className="caption">
+        <figcaption className="text-slate-500">
           {caption}
-        </p>
+        </figcaption>
       </Section>
     )
 }
